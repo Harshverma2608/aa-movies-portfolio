@@ -1,0 +1,12 @@
+{
+  "name": "aa-movies",
+  "version": "1.0.0",
+  "description": "A&A Movies — Event Photography Studio",
+  "private": true,
+  "scripts": {
+    "frontend": "npm run dev --prefix frontend",
+    "backend": "npm run dev --prefix backend",
+    "install:all": "npm install --prefix frontend && npm install --prefix backend",
+    "build": "npm run build --prefix frontend"
+  }
+}

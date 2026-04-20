@@ -1,0 +1,726 @@
+﻿@import "tailwindcss";
+
+/* ─── LOCAL FONTS — only critical weights ─── */
+/* Noto Serif — headlines */
+@import "@fontsource/noto-serif/300-italic.css";
+@import "@fontsource/noto-serif/400.css";
+/* Manrope — body */
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/600.css";
+/* Oswald — UI labels */
+@import "@fontsource/oswald/400.css";
+/* Great Vibes — script accent */
+@import "@fontsource/great-vibes/400.css";
+/* Unna — secondary serif */
+@import "@fontsource/unna/400.css";
+@import "@fontsource/unna/400-italic.css";
+/* Geist — stats/numbers */
+@import "@fontsource/geist/400.css";
+/* Material Symbols — icons */
+@import "@material-symbols/font-400/outlined.css";
+
+@theme {
+  --color-surface: #fbf9f4;
+  --color-surface-dim: #dbdad5;
+  --color-surface-bright: #fbf9f4;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3ee;
+  --color-surface-container: #f0eee9;
+  --color-surface-container-high: #eae8e3;
+  --color-surface-container-highest: #e4e2dd;
+  --color-surface-variant: #e4e2dd;
+  --color-background: #fbf9f4;
+  --color-on-background: #1b1c19;
+  --color-on-surface: #1b1c19;
+  --color-on-surface-variant: #4e4639;
+  --color-outline: #7f7667;
+  --color-outline-variant: #d1c5b4;
+  --color-secondary: #775a19;
+  --color-secondary-fixed: #ffdea5;
+  --color-secondary-fixed-dim: #e9c176;
+  --color-on-secondary-fixed: #261900;
+  --color-error: #ba1a1a;
+
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+  --font-great-vibes: "Great Vibes", cursive;
+  --font-unna: "Unna", serif;
+  --font-geist: "Geist", sans-serif;
+
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background-color: #fbf9f4;
+    color: #1b1c19;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-headline); }
+}
+
+/* ─── FONT UTILITY CLASSES ─── */
+/* Oswald — navbar, labels, uppercase UI elements */
+.font-oswald   { font-family: "Oswald", sans-serif; }
+/* Great Vibes — hero cursive accent, quote signatures */
+.font-script   { font-family: "Great Vibes", cursive; }
+/* Unna — secondary serif, body headings, card titles */
+.font-unna     { font-family: "Unna", serif; }
+/* Geist — stats, counters, technical labels */
+.font-geist    { font-family: "Geist", sans-serif; }
+
+/* ─── MATERIAL SYMBOLS (local) ─── */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ─── GOLD GRADIENT ─── */
+.gold-gradient {
+  background: linear-gradient(135deg, #ffdea5 0%, #e9c176 100%);
+}
+
+/* ─── GALLERY MASONRY — CSS columns for true masonry ─── */
+.masonry-grid {
+  columns: 2;
+  column-gap: 12px;
+}
+@media (min-width: 640px) {
+  .masonry-grid { columns: 3; column-gap: 14px; }
+}
+@media (min-width: 1024px) {
+  .masonry-grid { columns: 4; column-gap: 16px; }
+}
+.gallery-item,
+.gallery-item-tall,
+.gallery-item-wide {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+@media (min-width: 640px) {
+  .gallery-item,
+  .gallery-item-tall,
+  .gallery-item-wide { margin-bottom: 16px; }
+}
+.gallery-item img,
+.gallery-item-tall img,
+.gallery-item-wide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover img,
+.gallery-item-tall:hover img,
+.gallery-item-wide:hover img {
+  transform: scale(1.04);
+}
+
+/* ─── NAVBAR ─── */
+.navbar-scrolled {
+  background: rgba(251, 249, 244, 0.97) !important;
+  box-shadow: 0 1px 0 rgba(209, 197, 180, 0.4);
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+/* ─── HERO ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes shutterBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.15; }
+}
+@keyframes lensFocus {
+  0%   { transform: scale(1) rotate(0deg); opacity: 0.6; }
+  50%  { transform: scale(1.08) rotate(3deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+}
+@keyframes filmStrip {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes aperture {
+  0%   { clip-path: circle(0% at 50% 50%); opacity: 0; }
+  100% { clip-path: circle(75% at 50% 50%); opacity: 1; }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(119, 90, 25, 0); }
+  50%       { box-shadow: 0 0 0 8px rgba(119, 90, 25, 0.12); }
+}
+@keyframes scanLine {
+  0%   { top: 0%; }
+  100% { top: 100%; }
+}
+@keyframes revealLeft {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+@keyframes counterUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up        { animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+.animate-fade-up-delay  { animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.25s both; }
+.animate-fade-up-delay2 { animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.45s both; }
+.animate-fade-in        { animation: fadeIn 1.2s ease both; }
+.animate-slow-zoom      { animation: slowZoom 12s ease-in-out infinite alternate; }
+.animate-float          { animation: floatY 4s ease-in-out infinite; }
+.animate-gold-pulse     { animation: goldPulse 2.5s ease-in-out infinite; }
+.animate-lens-focus     { animation: lensFocus 6s ease-in-out infinite; }
+.animate-aperture       { animation: aperture 1s cubic-bezier(0.16,1,0.3,1) both; }
+.animate-reveal-left    { animation: revealLeft 1s cubic-bezier(0.16,1,0.3,1) both; }
+.animate-counter        { animation: counterUp 0.8s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* ─── FILM STRIP ─── */
+.film-strip-track {
+  display: flex;
+  width: max-content;
+  animation: filmStrip 30s linear infinite;
+  will-change: transform;
+}
+.film-strip-track:hover { animation-play-state: paused; }
+
+/* ─── SHUTTER OVERLAY ─── */
+.shutter-overlay {
+  position: fixed;
+  inset: 0;
+  background: #1b1c19;
+  z-index: 9999;
+  pointer-events: none;
+  animation: shutterBlink 0.4s ease forwards;
+}
+
+/* ─── SCAN LINE ─── */
+.scan-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(233,193,118,0.6), transparent);
+  animation: scanLine 3s linear infinite;
+  will-change: top;
+  pointer-events: none;
+}
+
+/* ─── GOLD SHIMMER TEXT ─── */
+.text-gold-shimmer {
+  background: linear-gradient(90deg, #775a19 0%, #e9c176 40%, #ffdea5 50%, #e9c176 60%, #775a19 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── CURSOR DOT ─── */
+.cursor-dot {
+  width: 8px; height: 8px;
+  background: #775a19;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.15s ease;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(119,90,25,0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9997;
+  transition: transform 0.35s ease, width 0.3s, height 0.3s;
+}
+
+/* ─── SECTION REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.22s; }
+.reveal-delay-3 { transition-delay: 0.34s; }
+.reveal-delay-4 { transition-delay: 0.46s; }
+
+/* ─── IMAGE HOVER LOUPE ─── */
+.img-loupe {
+  position: relative;
+  overflow: hidden;
+}
+.img-loupe::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(233,193,118,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.img-loupe:hover::after { opacity: 1; }
+
+/* ─── APERTURE RING ─── */
+.aperture-ring {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(119,90,25,0.3);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.aperture-ring::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(119,90,25,0.15);
+}
+.aperture-ring::after {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  border-radius: 50%;
+  border: 1px dashed rgba(119,90,25,0.1);
+  animation: lensFocus 8s linear infinite;
+}
+
+/* ─── PROFESSIONAL ADDITIONS ─── */
+
+/* Page transition shutter */
+@keyframes shutterOpen {
+  0%   { clip-path: inset(50% 0 50% 0); opacity: 1; }
+  100% { clip-path: inset(0% 0 0% 0);   opacity: 1; }
+}
+@keyframes shutterClose {
+  0%   { clip-path: inset(0% 0 0% 0);   opacity: 1; }
+  100% { clip-path: inset(50% 0 50% 0); opacity: 0; }
+}
+
+/* Grain texture overlay */
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%       { transform: translate(-2%, -3%); }
+  20%       { transform: translate(3%, 2%); }
+  30%       { transform: translate(-1%, 4%); }
+  40%       { transform: translate(4%, -1%); }
+  50%       { transform: translate(-3%, 3%); }
+  60%       { transform: translate(2%, -4%); }
+  70%       { transform: translate(-4%, 1%); }
+  80%       { transform: translate(1%, -2%); }
+  90%       { transform: translate(-2%, 4%); }
+}
+
+/* Typewriter cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Horizontal marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Vertical text reveal */
+@keyframes clipReveal {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0% 0); }
+}
+
+/* Rotate slow */
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 0px rgba(233,193,118,0)); }
+  50%       { filter: drop-shadow(0 0 12px rgba(233,193,118,0.5)); }
+}
+
+/* Ink spread */
+@keyframes inkSpread {
+  from { transform: scale(0); opacity: 0.6; border-radius: 50%; }
+  to   { transform: scale(4); opacity: 0; border-radius: 50%; }
+}
+
+/* Noise grain overlay — disabled for performance */
+.grain-overlay { display: none; }
+
+/* Marquee text */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* Rotating ring */
+.rotate-slow { animation: rotateSlow 20s linear infinite; }
+.rotate-slow-rev { animation: rotateSlow 15s linear infinite reverse; }
+
+/* Glow icon */
+.glow-icon { animation: glowPulse 3s ease-in-out infinite; }
+
+/* Typewriter cursor */
+.typewriter-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: #775a19;
+  margin-left: 2px;
+}
+
+/* Clip reveal text */
+.clip-reveal {
+  animation: clipReveal 1s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+/* Ink ripple on click */
+.ink-ripple {
+  position: relative;
+  overflow: hidden;
+}
+.ink-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(119,90,25,0.15);
+  transform: scale(0);
+  border-radius: 50%;
+  animation: inkSpread 0.6s ease-out forwards;
+}
+
+/* Smooth image reveal on load */
+.img-reveal {
+  animation: aperture 0.8s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+/* Horizontal scroll snap gallery */
+.snap-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.snap-gallery::-webkit-scrollbar { display: none; }
+.snap-gallery > * { scroll-snap-align: start; flex-shrink: 0; }
+
+/* Progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ffdea5, #e9c176, #775a19);
+  z-index: 9999;
+  transform-origin: left;
+}
+
+/* Frosted glass card */
+.glass-card {
+  background: rgba(251,249,244,0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(209,197,180,0.3);
+}
+
+/* Gold line divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e9c176, transparent);
+}
+
+/* Hover lift */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(27,28,25,0.08);
+}
+
+/* Text gradient animate */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.text-animate-gradient {
+  background: linear-gradient(270deg, #775a19, #e9c176, #ffdea5, #e9c176, #775a19);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* Stagger list items */
+.stagger-list > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.stagger-list.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.05s; }
+.stagger-list.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.15s; }
+.stagger-list.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.25s; }
+.stagger-list.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.35s; }
+.stagger-list.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.45s; }
+
+/* ══════════════════════════════════════════
+   PERFORMANCE & MOBILE FIXES
+══════════════════════════════════════════ */
+
+/* GPU compositing hints */
+.animate-slow-zoom,
+.film-strip-track,
+.scan-line,
+.animate-float,
+.animate-lens-focus,
+.cursor-dot,
+.cursor-ring,
+.scroll-progress {
+  will-change: transform;
+}
+
+/* Disable heavy animations on mobile */
+@media (max-width: 768px) {
+  .animate-slow-zoom    { animation: none; }
+  .scan-line            { display: none; }
+  .animate-lens-focus   { animation: none; }
+  .animate-float        { animation: none; }
+  .animate-gold-pulse   { animation: none; }
+  .glow-icon            { animation: none; }
+  .aperture-ring::after { animation: none; }
+  .film-strip-track     { animation-duration: 50s; }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── MOBILE LAYOUT FIXES ── */
+
+/* Navbar padding on small screens */
+@media (max-width: 640px) {
+  nav[class*="fixed"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Hero text — prevent overflow on small screens */
+@media (max-width: 480px) {
+  .hero-h1 { font-size: clamp(2.5rem, 10vw, 4rem) !important; }
+}
+
+/* Masonry grid — handled above in main masonry section */
+
+/* Packages add-ons — 2 columns on mobile */
+@media (max-width: 480px) {
+  .addons-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+  button, a[role="button"] { min-height: 44px; min-width: 44px; }
+}
+
+/* Sticky tab bars — scroll snap on mobile */
+.tab-scroll {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-scroll::-webkit-scrollbar { display: none; }
+.tab-scroll > button { scroll-snap-align: start; }
+
+/* ── IMAGE PERFORMANCE ── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent layout shift on images */
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* ── FONT DISPLAY — handled by @fontsource packages automatically ── */
+
+
+/* ══════════════════════════════════════════
+   GLOBAL RESPONSIVE FIXES
+══════════════════════════════════════════ */
+
+/* ── Prevent any element from overflowing viewport ── */
+*, *::before, *::after {
+  max-width: 100%;
+}
+
+/* ── Images always fill their container, never overflow ── */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Hero section — always full viewport, text never overflows ── */
+section[class*="h-screen"] {
+  min-height: 100svh; /* safe viewport height on mobile */
+}
+
+/* ── Navbar — prevent overflow on very small screens ── */
+@media (max-width: 380px) {
+  .navbar-brand-text { display: none; }
+}
+
+/* ── About section image — constrain on mobile ── */
+@media (max-width: 767px) {
+  .about-image-wrap {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* ── Service cards — single column on very small screens ── */
+@media (max-width: 400px) {
+  .service-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Portfolio bento — 2 col on mobile, no col-span ── */
+@media (max-width: 639px) {
+  .portfolio-grid .col-span-2 { grid-column: span 1 !important; }
+  .portfolio-grid .row-span-2 { grid-row: span 1 !important; }
+}
+
+/* ── Packages tab bar — horizontal scroll ── */
+.packages-tabs {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+.packages-tabs::-webkit-scrollbar { display: none; }
+
+/* ── Gallery hero — ensure text is above fold ── */
+@media (max-width: 767px) {
+  .gallery-hero { min-height: 50vw; padding-top: 80px; }
+}
+
+/* ── Contact form — full width on mobile ── */
+@media (max-width: 767px) {
+  .contact-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Footer — stack on mobile ── */
+@media (max-width: 639px) {
+  .footer-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+}
+
+/* ── Aperture ring — smaller on mobile ── */
+@media (max-width: 767px) {
+  .aperture-ring {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ── Disable framer-motion heavy effects on mobile ── */
+@media (max-width: 767px) {
+  .animate-slow-zoom  { animation: none !important; }
+  .scan-line          { display: none !important; }
+  .animate-float      { animation: none !important; }
+  .glow-icon          { animation: none !important; }
+  .aperture-ring::after { animation: none !important; }
+}
+
+/* ── Reduce motion for accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Performance: GPU layers for animated elements ── */
+.animate-slow-zoom,
+.film-strip-track,
+.cursor-dot,
+.cursor-ring {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* ── Prevent text overflow on all screen sizes ── */
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ── Touch targets ── */
+@media (max-width: 767px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #f5f3ee; }
+::-webkit-scrollbar-thumb { background: #d1c5b4; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #775a19; }

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f2f1ec",
+                    "primary": "#5f5e5e",
+                    "secondary-fixed": "#ffdea5",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#474746",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed": "#261900",
+                    "surface": "#fbf9f4",
+                    "outline-variant": "#d1c5b4",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e4e2dd",
+                    "surface-container-high": "#eae8e3",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-container": "#3b3b3b",
+                    "secondary-container": "#fed488",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#a7a5a4",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "surface-container-highest": "#e4e2dd",
+                    "surface-container": "#f0eee9",
+                    "tertiary-fixed": "#ffe088",
+                    "surface-container-low": "#f5f3ee",
+                    "background": "#fbf9f4",
+                    "inverse-surface": "#30312e",
+                    "on-background": "#1b1c19",
+                    "on-primary-fixed": "#1b1c1c",
+                    "surface-dim": "#dbdad5",
+                    "surface-bright": "#fbf9f4",
+                    "on-surface": "#1b1c19",
+                    "on-tertiary-container": "#493900",
+                    "tertiary": "#735c00",
+                    "surface-tint": "#5f5e5e",
+                    "secondary": "#775a19",
+                    "on-secondary-container": "#785a1a",
+                    "on-surface-variant": "#4e4639",
+                    "inverse-primary": "#c8c6c5",
+                    "outline": "#7f7667",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#c5a129",
+                    "secondary-fixed-dim": "#e9c176"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Noto Serif"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Noto Serif', serif; }
+        .gold-gradient {
+            background: linear-gradient(135deg, #ffdea5 0%, #e9c176 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 backdrop-blur-md flex justify-between items-center px-12 py-6 w-full">
+<div class="font-serif text-2xl font-light tracking-[0.2em] text-[#1b1c19]">ELYSIA STUDIO</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-serif text-lg tracking-widest uppercase text-[#1b1c19] opacity-70 hover:opacity-100 hover:text-[#775a19] transition-all duration-500" href="#">Home</a>
+<a class="font-serif text-lg tracking-widest uppercase text-[#775a19] border-b border-[#775a19] pb-1 hover:opacity-100 transition-all duration-500" href="#">About</a>
+<a class="font-serif text-lg tracking-widest uppercase text-[#1b1c19] opacity-70 hover:opacity-100 hover:text-[#775a19] transition-all duration-500" href="#">Gallery</a>
+<a class="font-serif text-lg tracking-widest uppercase text-[#1b1c19] opacity-70 hover:opacity-100 hover:text-[#775a19] transition-all duration-500" href="#">Services</a>
+<a class="font-serif text-lg tracking-widest uppercase text-[#1b1c19] opacity-70 hover:opacity-100 hover:text-[#775a19] transition-all duration-500" href="#">Contact Us</a>
+</div>
+<button class="bg-[#1b1c1c] text-[#fbf9f4] px-8 py-3 font-serif text-sm tracking-widest uppercase transition-all duration-300 hover:scale-[1.02] active:scale-95">Book a Session</button>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-12 mb-32">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-end gap-12">
+<div class="md:w-1/2">
+<span class="font-label text-[10px] tracking-[0.4em] uppercase text-secondary mb-6 block">Our Essence</span>
+<h1 class="text-6xl md:text-8xl leading-[1.1] font-light mb-8 italic">Capturing the <br/>Quiet Moments</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-md leading-relaxed">
+                            We believe that photography is not about the grand gestures, but the subtle, honest connections that happen in the margins of life.
+                        </p>
+</div>
+<div class="md:w-1/2 w-full">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Black and white artistic close-up of hands gently touching, soft natural lighting, emotional and high-end editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbVpAMcupjW9sbMHG0aIM82FxyjyxaDaLVSp5zuxjv9OPdNEfgEWXQ7kZHf_RgipmvL2WzssxaFA-x3RFyIVofiWynqub3PjASJ80_7HEwN3TGfevAFv8FkaOJ9b3eyGV4Ym24kKU1cJo6DMf4SvT03dwDBmw_TBhIZxj5x19TbRn2yeSHeWk6I9C-nGsoIX1ug_8WSg_g9pKvd9k49Q0HQKHxYd4kqWjDNouIV0gf9WeunHyVHwV8FxOZhQy6QPBKwZDPGIheY0M"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Section (Tonal Layering) -->
+<section class="bg-surface-container-low py-32 px-12">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-24">
+<div class="md:w-1/3">
+<h2 class="text-4xl font-light tracking-tight leading-tight">The Philosophy <br/>of Time</h2>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline mb-4 block">Experience</span>
+<h3 class="text-xl font-serif mb-4">A Decade of Vision</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">With over ten years behind the lens, we have learned that the best shots are never staged. They are observed. We move like shadows, preserving the atmosphere as it truly is.</p>
+</div>
+<div>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline mb-4 block">Emotion</span>
+<h3 class="text-xl font-serif mb-4">The Feel of a Frame</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">Our work is defined by emotional resonance. We don't just capture what an event looks like; we document how it felt to be there, in that specific light, at that exact moment.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Approach Section (Asymmetric Bento) -->
+<section class="py-32 px-12">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<span class="font-label text-[10px] tracking-[0.4em] uppercase text-secondary mb-4 block">How We Work</span>
+<h2 class="text-5xl font-light">The Elysia Approach</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Step 1 -->
+<div class="md:col-span-4 bg-surface-container-lowest p-12 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(27,28,25,0.05)]">
+<span class="text-4xl font-serif italic text-secondary-fixed-dim mb-8 block">01</span>
+<h3 class="text-2xl font-serif mb-4">The Discovery</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">We begin with a deep conversation. Understanding your values and your story is the foundation of our visual narrative.</p>
+</div>
+<!-- Image Interlude -->
+<div class="md:col-span-8 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="Artistic blurred motion shot of a couple dancing in a grand ballroom, warm golden candlelight, cinematic film grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Jkg9vGu1Fn9RC7GEJFPEldTBqi2aJkoL8y9L5n1GeeNy6ugUB-dQ4n_wIxhOfbb2ZdfQ4Q9EFqvZ7YGCC8UyV84nqqWrrQGI-owU1LLmFfI0ICM595E_3BCTCHSgYoGvdM1iEaXwecFrhGJDvEmDXeJb9Tfs8P_LQK71Qp8ibJ3A-zq_7WFZo1OT0dOqScYwiBldIYdOUrZ1ORUXSsMvc75oMR9Vn1L8Y1_p_bsg1ly50akV5x8o0yWCObyYq8yigZkZy3U1_bw"/>
+</div>
+<!-- Image Interlude 2 -->
+<div class="md:col-span-5 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Vintage camera on a minimalist wooden table with soft morning light hitting the lens, elegant still life photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDht71EWo--A_r3Ni9go_CZisZEQ19szPuZN5WhDATszoN9q348NkY7M0VkrN0zrGpIhe-y6aSTwzySerfiycelUnoMyV5SA-RU7L28ylhYhAulc3PjR0PhLTYW3IIIIHsRdwo_olt0NwudxFLf3ZfmD6mytMuunxsQuLQLC6-QcfxUve0Z7BwhX06sSsxtt0fs3nGAAxO0F5tP-TRzB5LASO3befd9rEK74HWtgXlu2lo367uNffLOekqVWEkn26j3L1806v_Qqgs"/>
+</div>
+<!-- Step 2 & 3 -->
+<div class="md:col-span-7 flex flex-col gap-8">
+<div class="bg-surface-container-lowest p-12 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(27,28,25,0.05)]">
+<span class="text-4xl font-serif italic text-secondary-fixed-dim mb-8 block">02</span>
+<h3 class="text-2xl font-serif mb-4">The Event</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">On the day, we are intentional but unobtrusive. We focus on candid interactions and the architectural beauty of your chosen setting.</p>
+</div>
+<div class="bg-surface-container-lowest p-12 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(27,28,25,0.05)]">
+<span class="text-4xl font-serif italic text-secondary-fixed-dim mb-8 block">03</span>
+<h3 class="text-2xl font-serif mb-4">The Curation</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">Each image is hand-polished in our studio to ensure the color and tone match the timeless editorial aesthetic of Elysia.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="py-32 px-12 bg-surface-container">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20">
+<div class="max-w-xl">
+<span class="font-label text-[10px] tracking-[0.4em] uppercase text-secondary mb-4 block">The Artisans</span>
+<h2 class="text-5xl font-light">The Minds Behind the Lens</h2>
+</div>
+<div class="mt-8 md:mt-0">
+<p class="font-body text-on-surface-variant text-sm italic">A collective of visionaries dedicated to the art of seeing.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Team Member 1 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden mb-6 bg-surface">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Professional portrait of a male photographer in a minimalist charcoal sweater, soft lighting, sophisticated gallery feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz8espPkrvJU3gsSD4kS1r1Gf-A8mdykMFW4RXWZn44wNqEPqD5myOvqllt0m8jUhFBNsTSVAUI6Xhyfo5Uq2N7cVyTXVcsDXDs5gJBuN6M__6iDcuob3pMh6mh1X4gBhIr8LXeLNrVclPluroQop_gxSslufoU6ImStX42QzXHoYvhadOHu3W5xlyqTeHwjKA4eI0dlKF_lQVCqSO6RkQArXXIEk-QOyyT4-o7MnLo_KFyHfHVsaW52WL3YkQc7n3CT41g4sMl48"/>
+</div>
+<h3 class="text-xl font-serif">Julian Thorne</h3>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline block mb-4">Founder &amp; Lead Photographer</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">With a background in fine arts, Julian views every frame as a canvas for light and shadow.</p>
+</div>
+<!-- Team Member 2 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden mb-6 bg-surface">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Elegant portrait of a female photographer with a camera, natural lighting, serene and creative studio atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR4tPUMsjRp6HAUzLcl7sYN2-B-n-gxtAztrU8r6jI6F30PE8dq1pX05HqJQblr7ewLWZ8rPJfWr239YM14DiPwRWHo1zj9zCLBPShvLtHZtjmEUHKPPKnSQLwGsWRpJ1PJWX4t0_hWNu7b4AUTgPgzAt6Q5pBC-ZAFc1UG8XhHavaAk8BFo8ZKjpWtNuS4o83TqVflJ-CDX5oq5hN88_cHn5uN8do2w5xYnrjltfTe-0lvukSZ7a3qDxrBcpc9FK8w1aL1rt_gnc"/>
+</div>
+<h3 class="text-xl font-serif">Elena Vance</h3>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline block mb-4">Editorial Director</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">Elena specializes in narrative pacing, ensuring your final gallery tells a cohesive, cinematic story.</p>
+</div>
+<!-- Team Member 3 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden mb-6 bg-surface">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Portrait of a male cinematographer looking thoughtful, soft moody lighting, artistic and professional aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtFzOMAKJEsvDWOMQqBxpCL_Ai8y_l2mQZrtngShiqTxFWM3mjBxZ7k_lHIw1ddUnIl6Kc656k-m4UgBT8ScOc9Q0Di8C61H3-27wrR7wYV6hdxGhoPpMILMNm71DVzpPVd5zgnxQn0biD7IcF7oJR82Omnm8IKUDEunOtJyGwklzwxxsG6vKmxYQZkXUooV4ygVEoRXColNlW8xjmu3sVgewTTHbWIMyWYZNMIHWTpgqErWp4luVz5fhS-9z493dc6B5yVt_72Gg"/>
+</div>
+<h3 class="text-xl font-serif">Marcus Chen</h3>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline block mb-4">Lead Cinematographer</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">Marcus captures the rhythm of life through motion, creating films that feel like living memories.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-40 px-12 text-center">
+<div class="max-w-3xl mx-auto">
+<span class="font-label text-[10px] tracking-[0.5em] uppercase text-secondary mb-12 block">Start Your Story</span>
+<h2 class="text-6xl font-light mb-12 font-serif italic">Shall we create something timeless?</h2>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="gold-gradient text-on-secondary-fixed px-12 py-5 font-serif text-sm tracking-widest uppercase transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg">Inquire Now</button>
+<button class="border-b border-on-surface text-on-surface px-12 py-5 font-serif text-sm tracking-widest uppercase transition-all duration-300 hover:text-secondary hover:border-secondary">View The Gallery</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 bg-[#f5f3ee] border-t border-[#d1c5b4]/20">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full">
+<div class="font-serif text-xl tracking-widest text-[#1b1c19]">ELYSIA STUDIO</div>
+<div class="flex gap-12">
+<a class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60 hover:text-[#775a19] transition-colors duration-300" href="#">Instagram</a>
+<a class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60 hover:text-[#775a19] transition-colors duration-300" href="#">Pinterest</a>
+<a class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60 hover:text-[#775a19] transition-colors duration-300" href="#">Vogue Portfolio</a>
+<a class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60 hover:text-[#775a19] transition-colors duration-300" href="#">Privacy Policy</a>
+</div>
+<div class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60">© 2024 ELYSIA STUDIO. ALL RIGHTS RESERVED.</div>
+</div>
+</footer>
+</body></html>

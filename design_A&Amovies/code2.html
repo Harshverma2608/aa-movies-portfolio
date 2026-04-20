@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f2f1ec",
+                    "primary": "#5f5e5e",
+                    "secondary-fixed": "#ffdea5",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#474746",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed": "#261900",
+                    "surface": "#fbf9f4",
+                    "outline-variant": "#d1c5b4",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e4e2dd",
+                    "surface-container-high": "#eae8e3",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-container": "#3b3b3b",
+                    "secondary-container": "#fed488",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#a7a5a4",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "surface-container-highest": "#e4e2dd",
+                    "surface-container": "#f0eee9",
+                    "tertiary-fixed": "#ffe088",
+                    "surface-container-low": "#f5f3ee",
+                    "background": "#fbf9f4",
+                    "inverse-surface": "#30312e",
+                    "on-background": "#1b1c19",
+                    "on-primary-fixed": "#1b1c1c",
+                    "surface-dim": "#dbdad5",
+                    "surface-bright": "#fbf9f4",
+                    "on-surface": "#1b1c19",
+                    "on-tertiary-container": "#493900",
+                    "tertiary": "#735c00",
+                    "surface-tint": "#5f5e5e",
+                    "secondary": "#775a19",
+                    "on-secondary-container": "#785a1a",
+                    "on-surface-variant": "#4e4639",
+                    "inverse-primary": "#c8c6c5",
+                    "outline": "#7f7667",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#c5a129",
+                    "secondary-fixed-dim": "#e9c176"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Noto Serif', serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 backdrop-blur-md flex justify-between items-center px-12 py-6">
+<div class="font-serif text-2xl font-light tracking-[0.2em] text-[#1b1c19]">ELYSIA STUDIO</div>
+<div class="hidden md:flex gap-10">
+<a class="font-serif text-lg tracking-widest uppercase text-[#1b1c19] opacity-70 hover:opacity-100 hover:text-[#775a19] transition-all duration-500" href="#">Home</a>
+<a class="font-serif text-lg tracking-widest uppercase text-[#1b1c19] opacity-70 hover:opacity-100 hover:text-[#775a19] transition-all duration-500" href="#">About</a>
+<a class="font-serif text-lg tracking-widest uppercase text-[#1b1c19] opacity-70 hover:opacity-100 hover:text-[#775a19] transition-all duration-500" href="#">Gallery</a>
+<a class="font-serif text-lg tracking-widest uppercase text-[#1b1c19] opacity-70 hover:opacity-100 hover:text-[#775a19] transition-all duration-500" href="#">Services</a>
+<a class="font-serif text-lg tracking-widest uppercase text-[#775a19] border-b border-[#775a19] pb-1 transition-all duration-500" href="#">Contact Us</a>
+</div>
+<button class="bg-on-primary-fixed text-surface px-8 py-3 rounded-sm font-label text-xs tracking-widest uppercase hover:bg-secondary transition-colors duration-500">
+            Book a Session
+        </button>
+</nav>
+<main class="pt-32 pb-20">
+<!-- Hero Section: Let's Connect -->
+<section class="px-12 mb-24 max-w-7xl mx-auto">
+<div class="grid md:grid-cols-2 gap-20 items-end">
+<div>
+<h1 class="text-6xl md:text-8xl font-light tracking-tight mb-8 leading-[1.1]">Let's <br/><span class="italic">Connect</span></h1>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">
+                        Every frame is a dialogue. We invite you to share your vision with us, and together, we will compose something timeless.
+                    </p>
+</div>
+<div class="flex justify-end">
+<div class="w-full h-80 bg-surface-container-low overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Interior of a minimalist luxury photography studio with high ceilings, soft natural light, and elegant mid-century modern furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSXKcQ6YlZadOq2fNgE-v6lI1kbpVuVe5nJXN3VNiuQkodZJI39maVZPMUyV0869QyhwWESpUixfjVV_16daQiVpTTxQpVr0nBKwCQ0N3Ue80y5ZxF721hVtDN5PQC0hbCW1pI__ukqC4jbc02MXwe5VuDSYE-uoK-Hm_eXJWz8tJiLveyfqmNpyF9-lUMgtEyYBWa0IXC2Js7jD2CfD5-SXWdb0BIXl24z40qzEuQxv26OFAn5r_h_8L5XIm2Aso0kHj7-IO5yhE"/>
+<div class="absolute inset-0 bg-secondary/10 pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Information Section -->
+<section class="px-12 max-w-7xl mx-auto grid lg:grid-cols-12 gap-16">
+<!-- Contact Form -->
+<div class="lg:col-span-7 bg-surface-container-low p-12 lg:p-20">
+<form class="space-y-12">
+<div class="grid md:grid-cols-2 gap-12">
+<div class="relative">
+<label class="block font-label text-[10px] tracking-[0.2em] text-outline mb-2 uppercase">Full Name</label>
+<input class="w-full bg-transparent border-b border-outline/30 focus:border-secondary outline-none py-2 transition-colors duration-300 font-body" placeholder="JULIAN VANCE" type="text"/>
+</div>
+<div class="relative">
+<label class="block font-label text-[10px] tracking-[0.2em] text-outline mb-2 uppercase">Email Address</label>
+<input class="w-full bg-transparent border-b border-outline/30 focus:border-secondary outline-none py-2 transition-colors duration-300 font-body" placeholder="JULIAN@ELYSIA.COM" type="email"/>
+</div>
+</div>
+<div class="relative">
+<label class="block font-label text-[10px] tracking-[0.2em] text-outline mb-2 uppercase">Subject</label>
+<select class="w-full bg-transparent border-b border-outline/30 focus:border-secondary outline-none py-2 transition-colors duration-300 font-body appearance-none">
+<option>EDITORIAL ENQUIRY</option>
+<option>COMMERCIAL COMMISSION</option>
+<option>PRIVATE PORTRAITS</option>
+<option>OTHER</option>
+</select>
+</div>
+<div class="relative">
+<label class="block font-label text-[10px] tracking-[0.2em] text-outline mb-2 uppercase">Your Message</label>
+<textarea class="w-full bg-transparent border-b border-outline/30 focus:border-secondary outline-none py-2 transition-colors duration-300 font-body resize-none" placeholder="TELL US ABOUT YOUR PROJECT..." rows="4"></textarea>
+</div>
+<button class="bg-gradient-to-r from-secondary-fixed to-secondary-fixed-dim text-on-secondary-fixed px-12 py-4 rounded-sm font-label text-xs tracking-[0.3em] uppercase hover:opacity-90 transition-all duration-300 shadow-lg shadow-secondary/5" type="submit">
+                        Send Inquiry
+                    </button>
+</form>
+</div>
+<!-- Studio Info & Details -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-16">
+<div class="space-y-12">
+<div>
+<h3 class="text-2xl font-light mb-6">The Studio</h3>
+<p class="text-on-surface-variant font-body leading-relaxed tracking-wide">
+                            248 MAYFAIR GARDENS<br/>
+                            LONDON, W1K 2HT<br/>
+                            UNITED KINGDOM
+                        </p>
+</div>
+<div>
+<h3 class="text-2xl font-light mb-6">Contact Details</h3>
+<div class="space-y-4">
+<p class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">call</span>
+<span class="font-body tracking-wider">+44 (0) 20 7946 0122</span>
+</p>
+<p class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-body tracking-wider">STUDIO@ELYSIAGALLERY.COM</span>
+</p>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-light mb-6">Socials</h3>
+<div class="flex gap-8">
+<a class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface hover:text-secondary transition-colors duration-300" href="#">Instagram</a>
+<a class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface hover:text-secondary transition-colors duration-300" href="#">Pinterest</a>
+<a class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface hover:text-secondary transition-colors duration-300" href="#">Vogue</a>
+</div>
+</div>
+</div>
+<!-- Tonal Shift Section for Map -->
+<div class="bg-surface-container-high h-72 w-full relative group grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Monochrome map aesthetic of central London streets with gold accent markers indicating the studio location." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqWcC5JCw8d2QP9_xTvJGleXUrpjsihjCSJUEWW9DcTkYvZdsf85PM3KlEucHMBZqC4-7pA7Mbezt6Wigk4JlQKxlKrlxxoCY-4K6UMx5JU1fGO2E6ZtaW_vvKoZEI8OYBle-W-Pndwymf-001obPE5BbLT0n6hmfFYJLhCs05X-9E3zoe4cmylFgvepF7VGN0_DdKl8cV8ZGlGvJ915keSiMyUE0a8XzAu6HGk0HhRMHWkLpAI3GHCwgnznstYcv4e5cFNpUgVx4"/>
+<div class="absolute inset-0 bg-secondary/5"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface p-4 shadow-xl">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Aesthetic Gallery Glimpse (Asymmetric Layout) -->
+<section class="mt-32 px-12 max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-start">
+<div class="w-full md:w-1/3 mt-20">
+<img class="w-full aspect-[3/4] object-cover grayscale brightness-110" data-alt="Candid artistic shot of a photographer's hand adjusting a vintage camera lens in a bright studio environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALkQI4nZsAk8kv5T3aDpihrb8Muob_2b5RqD9qj2mno9EpjnS6CnHXgijBnYhnqT83l_8dpxBRlhb_ihIOdqSo3Lw-T85ulryjSy80BqwjK1wDjYmFlv3lYC5W1ofbArrI7OfWmbCC3UYb0Lg_5L_j1WbINZf_7v-_9q5kahNjVet1TbaZYxvosXrS1iKAC6dQYF_y-7C0A-LYjPSMwBfRDK3MwQ2FgMgLjUfraO6udLYhaSJE2bEf0sy3yElxYjxhftD3IShTSOs"/>
+</div>
+<div class="w-full md:w-2/3">
+<img class="w-full aspect-video object-cover" data-alt="Wide shot of a luxury photography set with professional lighting equipment and a clean white backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6UJz7e0BFYWSEPsTDyWg5_H5eTt_v8MDNAUxqTxCnUiyWaWYOTu2tceS7UEQqv4OmxKv2tJoIERcY0vi754FtnM-cROuoewW5uu-ZdJP60Oj4AnzBcEOUaAnxzlFf9NkPzVS06QWQHw13axzy6CXznd_wi9PnuVu_nrASJ-yQ6WLrHAIj8ZmZ6lF7WUFetJoxpGI9R4UI-jhupdK-Qv4JJUVJNUYfd0YOBC8qJOz1zMSTONCUigvFibQs2WUn15Jhn3BhkCLLJZY"/>
+<div class="mt-8 text-right italic font-serif text-3xl font-light text-secondary">
+                    "Capturing the soul behind the light."
+                </div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 bg-[#f5f3ee] flex flex-col md:flex-row justify-between items-center gap-8 border-t border-[#d1c5b4]/20">
+<div class="font-serif text-xl tracking-widest text-[#1b1c19]">ELYSIA STUDIO</div>
+<div class="flex gap-10">
+<a class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60 hover:text-[#775a19] transition-colors duration-300" href="#">Instagram</a>
+<a class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60 hover:text-[#775a19] transition-colors duration-300" href="#">Pinterest</a>
+<a class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60 hover:text-[#775a19] transition-colors duration-300" href="#">Vogue Portfolio</a>
+<a class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60 hover:text-[#775a19] transition-colors duration-300" href="#">Privacy Policy</a>
+</div>
+<div class="font-sans text-[10px] tracking-[0.15em] uppercase text-[#1b1c19] opacity-60">© 2024 ELYSIA STUDIO. ALL RIGHTS RESERVED.</div>
+</footer>
+</body></html>
