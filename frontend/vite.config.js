@@ -1,27 +1,37 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  server: {
-    proxy: { '/api': 'http://localhost:5000' }
-  },
-  build: {
-    // Split chunks for better caching
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor':  ['react', 'react-dom', 'react-router-dom'],
-          'motion-vendor': ['framer-motion'],
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+
+  return {
+    plugins: [react(), tailwindcss()],
+
+    // Dev proxy — only used locally
+    server: {
+      proxy: {
+        '/api': {
+          target: env.VITE_API_URL || 'http://localhost:5000',
+          changeOrigin: true,
         }
       }
     },
-    // Increase chunk warning limit
-    chunkSizeWarningLimit: 1000,
-  },
-  // Optimize deps
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion', 'react-router-dom']
+
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor':  ['react', 'react-dom', 'react-router-dom'],
+            'motion-vendor': ['framer-motion'],
+          }
+        }
+      },
+      chunkSizeWarningLimit: 1000,
+    },
+
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'framer-motion', 'react-router-dom']
+    }
   }
 })

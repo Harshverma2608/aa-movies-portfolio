@@ -5,7 +5,7 @@ import { IMG } from '../hooks/useMedia'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { FadeUp, FadeLeft, FadeRight, ClipReveal, ScrollProgressBar } from '../components/AnimatedSection'
-import axios from 'axios'
+import api from '../lib/api'
 
 const SUBJECTS = [
   'Wedding Enquiry',
@@ -50,7 +50,7 @@ export default function Contact() {
     setLoading(true)
     setStatus(null)
     try {
-      await axios.post('/api/contact', form)
+      await api.post('/api/contact', form)
       setStatus('success')
       setForm({ name:'', email:'', phone:'', subject:'Wedding Enquiry', message:'', date:'' })
       setErrors({})
@@ -390,5 +390,6 @@ export default function Contact() {
     </div>
   )
 }
+
 
 
