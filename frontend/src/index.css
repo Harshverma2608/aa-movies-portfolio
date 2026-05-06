@@ -629,6 +629,13 @@ section[class*="h-screen"] {
   min-height: 100svh;       /* modern mobile: excludes browser chrome */
 }
 
+/* Force hero image container to fill full height */
+@supports (min-height: 100svh) {
+  section[style*="minHeight"] {
+    height: 100svh !important;
+  }
+}
+
 /* ── Navbar — prevent overflow on very small screens ── */
 @media (max-width: 380px) {
   .navbar-brand-text { display: none; }

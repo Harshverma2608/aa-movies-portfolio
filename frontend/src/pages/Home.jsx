@@ -97,15 +97,16 @@ export default function Home() {
       {/* ══════════════════════════════════════
           HERO — auto-sliding images
       ══════════════════════════════════════ */}
-      <section className="relative w-full flex items-center justify-center overflow-hidden" style={{ minHeight: '100svh' }}>
+      <section className="relative w-full flex items-center justify-center overflow-hidden" style={{ height: '100vh', minHeight: '100svh' }}>
         {/* Background slides */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0" style={{ height: '100%' }}>
           <AnimatePresence mode="sync">
             <motion.img
               key={slideIdx}
               src={slides[slideIdx]}
               alt="A&A Movies"
               className="absolute inset-0 w-full h-full object-cover object-center"
+              style={{ height: '100%', width: '100%' }}
               loading={slideIdx === 0 ? 'eager' : 'lazy'}
               fetchPriority={slideIdx === 0 ? 'high' : 'low'}
               initial={{ opacity: 0 }}
