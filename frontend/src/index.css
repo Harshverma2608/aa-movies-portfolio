@@ -623,6 +623,12 @@ section[class*="h-screen"] {
   min-height: 100svh; /* safe viewport height on mobile */
 }
 
+/* Hero full height fix — covers mobile browser chrome */
+.hero-section {
+  min-height: 100vh;        /* fallback */
+  min-height: 100svh;       /* modern mobile: excludes browser chrome */
+}
+
 /* ── Navbar — prevent overflow on very small screens ── */
 @media (max-width: 380px) {
   .navbar-brand-text { display: none; }

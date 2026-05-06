@@ -97,7 +97,7 @@ export default function Home() {
       {/* ══════════════════════════════════════
           HERO — auto-sliding images
       ══════════════════════════════════════ */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      <section className="relative w-full flex items-center justify-center overflow-hidden" style={{ minHeight: '100svh' }}>
         {/* Background slides */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode="sync">
