@@ -60,9 +60,10 @@ export default function Gallery() {
       <Navbar/>
 
       {/* ── HERO ── */}
-      <section className="relative flex items-end overflow-hidden" style={{minHeight:'clamp(280px,50vh,60vh)',paddingTop:'72px'}}>
+      <section className="relative flex items-end overflow-hidden" style={{ minHeight: 'clamp(320px, 55vh, 70vh)', paddingTop: '72px' }}>
         <img src={IMG.hero} alt="Gallery"
           className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ height: '100%' }}
           loading="eager" fetchPriority="high" width="1920" height="1080"/>
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/80"/>
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pb-8 sm:pb-14">

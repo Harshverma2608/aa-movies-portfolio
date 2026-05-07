@@ -172,8 +172,8 @@ export default function Albums() {
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative h-[55vh] sm:h-[65vh] flex items-end overflow-hidden">
-        <img src={IMG.hero} alt="Albums" className="absolute inset-0 w-full h-full object-cover animate-slow-zoom" />
+      <section className="relative flex items-end overflow-hidden" style={{ minHeight: 'clamp(320px, 55vh, 70vh)', paddingTop: '72px' }}>
+        <img src={IMG.hero} alt="Albums" className="absolute inset-0 w-full h-full object-cover animate-slow-zoom" style={{ height: '100%' }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/75" />
         <div className="relative z-10 px-6 sm:px-12 pb-10 sm:pb-16 max-w-7xl w-full mx-auto">
           <p className="animate-fade-up text-[10px] tracking-[0.5em] uppercase mb-3 sm:mb-4" style={{ color: '#e9c176' }}>

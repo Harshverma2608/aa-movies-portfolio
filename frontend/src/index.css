@@ -618,7 +618,26 @@ img {
   object-position: center;
 }
 
-/* ── Hero section — always full viewport, text never overflows ── */
+/* ── Hero image fill fix — absolute positioned images must fill container ── */
+section > img.absolute,
+section > div > img.absolute {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Prevent hero sections from collapsing on mobile ── */
+section[style*="minHeight"] {
+  position: relative;
+}
+section[style*="minHeight"] > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 section[class*="h-screen"] {
   min-height: 100svh; /* safe viewport height on mobile */
 }
