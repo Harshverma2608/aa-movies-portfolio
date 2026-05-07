@@ -121,9 +121,15 @@ export default function Footer() {
 
         {/* Bottom row */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[10px] tracking-[0.15em] uppercase opacity-30">
-            © {new Date().getFullYear()} A&amp;A Movies. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p className="text-[10px] tracking-[0.15em] uppercase opacity-30">
+              © {new Date().getFullYear()} A&amp;A Movies. All rights reserved.
+            </p>
+            <span className="hidden sm:block opacity-20 text-[10px]">·</span>
+            <p className="text-[10px] tracking-[0.15em] uppercase opacity-30">
+              Developed by <span className="opacity-60 text-[#e9c176]">Harsh Verma</span>
+            </p>
+          </div>
           <p className="font-[Noto_Serif] italic text-sm opacity-20">
             "Every frame, a forever."
           </p>
