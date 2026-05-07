@@ -31,11 +31,17 @@ router.post('/', async (req, res) => {
       sendContactEmail({ name, email, phone, subject, message }),
       sendAutoReply({ name, email, subject }),
     ]).then(results => {
-      results.forEach((r, i) => {
-        if (r.status === 'rejected') {
-          console.error(`Email ${i === 0 ? 'admin' : 'auto-reply'} failed:`, r.reason?.message)
-        }
-      })
+      const [adminResult, replyResult] = results
+      if (adminResult.status === 'rejected') {
+        console.error('❌ Admin email failed:', adminResult.reason?.message)
+      } else {
+        console.log('✅ Admin email sent to', process.env.ADMIN_EMAIL || process.env.EMAIL_USER)
+      }
+      if (replyResult.status === 'rejected') {
+        console.error('❌ Auto-reply failed:', replyResult.reason?.message)
+      } else {
+        console.log('✅ Auto-reply sent to', email)
+      }
     })
 
     res.status(201).json({ success: true, id: contact._id })
