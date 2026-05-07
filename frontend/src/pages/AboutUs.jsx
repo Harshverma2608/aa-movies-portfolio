@@ -35,7 +35,7 @@ export default function AboutUs() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative flex items-center overflow-hidden" style={{ height: '100vh', minHeight: '100svh' }}>
+      <section className="relative flex items-center overflow-hidden" style={{ height: '100dvh' }}>
         <img src={IMG.img5} alt="About" className="absolute inset-0 w-full h-full object-cover animate-slow-zoom" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
         <div className="absolute right-16 top-1/2 -translate-y-1/2 opacity-10 hidden lg:block" style={{ animation: 'lensFocus 10s ease-in-out infinite' }}>

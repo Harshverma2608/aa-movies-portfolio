@@ -150,14 +150,15 @@ function ServiceBlock({ service, index }) {
   return (
     <article className="relative">
       {/* Full-bleed hero */}
-      <div className="relative w-full overflow-hidden" style={{ height: '100vh', minHeight: '100svh' }}>
+      <div className="relative w-full overflow-hidden" style={{ height: '100dvh' }}>
         <img
           src={service.heroImg}
           alt={service.title}
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ height: '100%' }}
         />
         <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-[#fbf9f4] px-6">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-[#fbf9f4] px-6" style={{ paddingTop: '72px' }}>
           <span className="text-[10px] tracking-[0.5em] uppercase text-[#e9c176] mb-4 sm:mb-6 block">
             {service.collection}
           </span>
@@ -250,8 +251,8 @@ export default function Services() {
       <Navbar />
 
       {/* Page hero */}
-      <section className="relative w-full overflow-hidden" style={{ height: '100vh', minHeight: '100svh' }}>
-        <img src={IMG.hero} alt="Services" className="w-full h-full object-cover" />
+      <section className="relative w-full overflow-hidden" style={{ height: '100dvh' }}>
+        <img src={IMG.hero} alt="Services" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/25" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-[#fbf9f4] px-6">
           <span className="text-[10px] tracking-[0.5em] uppercase text-[#e9c176] mb-4 sm:mb-6 block">

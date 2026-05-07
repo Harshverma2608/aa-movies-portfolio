@@ -639,19 +639,20 @@ section[style*="minHeight"] > img {
   object-fit: cover;
 }
 section[class*="h-screen"] {
-  min-height: 100svh; /* safe viewport height on mobile */
+  min-height: 100dvh;
 }
 
-/* Hero full height fix — covers mobile browser chrome */
+/* Hero full height fix — 100dvh is the most reliable on mobile */
 .hero-section {
-  min-height: 100vh;        /* fallback */
-  min-height: 100svh;       /* modern mobile: excludes browser chrome */
+  height: 100dvh;
 }
 
-/* Force hero image container to fill full height */
-@supports (min-height: 100svh) {
-  section[style*="minHeight"] {
-    height: 100svh !important;
+/* Fallback for older browsers that don't support dvh */
+@supports not (height: 100dvh) {
+  .hero-section,
+  section[class*="h-screen"] {
+    height: 100svh;
+    min-height: 100svh;
   }
 }
 
