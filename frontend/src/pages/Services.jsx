@@ -80,18 +80,18 @@ function YouTubeSection() {
   }, [])
 
   return (
-    <section className="py-32 px-12 bg-[#f5f3ee]">
+    <section className="py-16 sm:py-24 lg:py-32 px-6 sm:px-12 bg-[#f5f3ee]">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
+        <div className="mb-12 sm:mb-20">
           <span className="text-[10px] tracking-[0.4em] uppercase text-[#775a19] mb-4 block">Cinematic</span>
-          <h2 className="font-[Noto_Serif] text-5xl font-light">Featured Films</h2>
-          <p className="text-[#4e4639] mt-4 max-w-lg">
+          <h2 className="font-[Noto_Serif] font-light" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>Featured Films</h2>
+          <p className="text-[#4e4639] mt-4 max-w-lg text-sm sm:text-base">
             Watch our latest work directly from the studio. Every film is a complete narrative — not a highlight reel.
           </p>
         </div>
 
         {/* Main player */}
-        <div className="w-full aspect-video bg-[#1b1c19] mb-8">
+        <div className="w-full aspect-video bg-[#1b1c19] mb-6 sm:mb-8">
           <iframe
             key={videos[active]?.id}
             src={`https://www.youtube-nocookie.com/embed/${videos[active]?.id}?rel=0&modestbranding=1`}
@@ -104,7 +104,7 @@ function YouTubeSection() {
         </div>
 
         {/* Video selector row */}
-        <div className="flex gap-4 overflow-x-auto pb-2">
+        <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-2">
           {videos.map((v, i) => (
             <button
               key={i}
@@ -114,19 +114,19 @@ function YouTubeSection() {
               }`}
             >
               {v.thumb ? (
-                <img src={v.thumb} alt={v.title} className="w-40 h-24 object-cover mb-2" />
+                <img src={v.thumb} alt={v.title} className="w-28 sm:w-40 h-16 sm:h-24 object-cover mb-2" />
               ) : (
-                <div className="w-40 h-24 bg-[#e4e2dd] flex items-center justify-center mb-2">
+                <div className="w-28 sm:w-40 h-16 sm:h-24 bg-[#e4e2dd] flex items-center justify-center mb-2">
                   <span className="material-symbols-outlined text-[#775a19]">play_circle</span>
                 </div>
               )}
               <p className="text-[10px] tracking-[0.15em] uppercase text-[#775a19] mb-1">{v.category}</p>
-              <p className="text-xs font-[Noto_Serif] text-[#1b1c19] leading-snug max-w-[160px] line-clamp-2">{v.title}</p>
+              <p className="text-xs font-[Noto_Serif] text-[#1b1c19] leading-snug max-w-[112px] sm:max-w-[160px] line-clamp-2">{v.title}</p>
             </button>
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6 sm:mt-8">
           <a
             href={`https://www.youtube.com/channel/${YT_CHANNEL_ID}`}
             target="_blank"
@@ -150,22 +150,25 @@ function ServiceBlock({ service, index }) {
   return (
     <article className="relative">
       {/* Full-bleed hero */}
-      <div className="relative h-screen w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden" style={{ height: '100vh', minHeight: '100svh' }}>
         <img
           src={service.heroImg}
           alt={service.title}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-[#fbf9f4] px-4">
-          <span className="text-[10px] tracking-[0.5em] uppercase text-[#e9c176] mb-6 block">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-[#fbf9f4] px-6">
+          <span className="text-[10px] tracking-[0.5em] uppercase text-[#e9c176] mb-4 sm:mb-6 block">
             {service.collection}
           </span>
-          <h2 className="font-[Noto_Serif] text-6xl md:text-8xl font-light leading-tight mb-4">
+          <h2 className="font-[Noto_Serif] font-light leading-tight mb-4"
+            style={{ fontSize: 'clamp(2rem, 8vw, 6rem)' }}>
             {service.title}
           </h2>
-          <p className="font-[Noto_Serif] italic text-2xl opacity-80">{service.subtitle}</p>
-          <div className="mt-12">
+          <p className="font-[Noto_Serif] italic opacity-80" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>
+            {service.subtitle}
+          </p>
+          <div className="mt-8 sm:mt-12">
             <span className="material-symbols-outlined text-4xl animate-bounce opacity-70">
               keyboard_double_arrow_down
             </span>
@@ -174,16 +177,19 @@ function ServiceBlock({ service, index }) {
       </div>
 
       {/* Narrative section */}
-      <div className={`py-32 px-12 ${index % 2 === 0 ? 'bg-[#fbf9f4]' : 'bg-[#f5f3ee]'}`}>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+      <div className={`py-16 sm:py-24 lg:py-32 px-6 sm:px-12 ${index % 2 === 0 ? 'bg-[#fbf9f4]' : 'bg-[#f5f3ee]'}`}>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-start">
 
           {/* Text — asymmetric offset */}
           <div className={`md:col-span-5 ${isEven ? 'md:col-start-1' : 'md:col-start-8 md:row-start-1'}`}>
-            <h3 className="font-[Noto_Serif] text-4xl font-light leading-tight mb-8">
+            <h3 className="font-[Noto_Serif] font-light leading-tight mb-6 sm:mb-8"
+              style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.5rem)' }}>
               The Curated<br />Narrative
             </h3>
-            <p className="text-[#4e4639] leading-relaxed text-lg mb-6">{service.description}</p>
-            <p className="text-[#4e4639] leading-relaxed text-lg mb-10">{service.detail}</p>
+            <p className="text-[#4e4639] leading-relaxed mb-4 sm:mb-6"
+              style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.125rem)' }}>{service.description}</p>
+            <p className="text-[#4e4639] leading-relaxed mb-8 sm:mb-10"
+              style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.125rem)' }}>{service.detail}</p>
             <a
               href="#film"
               className="text-xs tracking-widest uppercase border-b border-[#1b1c19] pb-1 hover:text-[#775a19] hover:border-[#775a19] transition-all"
@@ -203,15 +209,22 @@ function ServiceBlock({ service, index }) {
         </div>
       </div>
 
-      {/* Detail focus — asymmetric photo grid */}
-      <div className={`py-16 px-12 ${index % 2 === 0 ? 'bg-[#f5f3ee]' : 'bg-[#fbf9f4]'}`}>
+      {/* Detail focus — responsive photo grid */}
+      <div className={`py-10 sm:py-16 px-6 sm:px-12 ${index % 2 === 0 ? 'bg-[#f5f3ee]' : 'bg-[#fbf9f4]'}`}>
         <div className="max-w-7xl mx-auto">
-          <span className="text-[10px] tracking-[0.4em] uppercase text-[#7f7667] mb-12 block">
+          <span className="text-[10px] tracking-[0.4em] uppercase text-[#7f7667] mb-6 sm:mb-12 block">
             Detail Focus: Artisanal Elements
           </span>
 
-          {/* Intentionally asymmetric bento grid */}
-          <div className="grid grid-cols-12 grid-rows-2 gap-4 h-[600px]">
+          {/* Mobile: simple 2-col grid. Desktop: asymmetric bento */}
+          <div className="grid grid-cols-2 gap-2 sm:gap-4 md:hidden">
+            {imgs.slice(1).map((img, i) => (
+              <div key={i} className="overflow-hidden aspect-[4/3]">
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          <div className="hidden md:grid grid-cols-12 grid-rows-2 gap-4" style={{ height: '500px' }}>
             <div className="col-span-5 row-span-2 overflow-hidden">
               <img src={imgs[1]} alt="" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
             </div>
@@ -237,17 +250,19 @@ export default function Services() {
       <Navbar />
 
       {/* Page hero */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative w-full overflow-hidden" style={{ height: '100vh', minHeight: '100svh' }}>
         <img src={IMG.hero} alt="Services" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/25" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-[#fbf9f4] px-4">
-          <span className="text-[10px] tracking-[0.5em] uppercase text-[#e9c176] mb-6 block">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-[#fbf9f4] px-6">
+          <span className="text-[10px] tracking-[0.5em] uppercase text-[#e9c176] mb-4 sm:mb-6 block">
             The Studio
           </span>
-          <h1 className="font-[Noto_Serif] text-6xl md:text-8xl font-light leading-tight mb-6">
+          <h1 className="font-[Noto_Serif] font-light leading-tight mb-4 sm:mb-6"
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)' }}>
             Our Services
           </h1>
-          <p className="text-lg tracking-[0.08em] opacity-80 max-w-xl">
+          <p className="tracking-[0.08em] opacity-80 max-w-xl"
+            style={{ fontSize: 'clamp(0.9rem, 2vw, 1.125rem)' }}>
             Each commission is a bespoke collaboration. We offer three distinct approaches to visual storytelling.
           </p>
         </div>
@@ -259,15 +274,16 @@ export default function Services() {
       ))}
 
       {/* Quote */}
-      <section className="py-32 bg-[#fbf9f4] overflow-hidden">
-        <div className="max-w-4xl mx-auto px-12 text-center">
+      <section className="py-16 sm:py-24 lg:py-32 bg-[#fbf9f4] overflow-hidden">
+        <div className="max-w-4xl mx-auto px-6 sm:px-12 text-center">
           <span
             className="material-symbols-outlined text-[#775a19] text-5xl mb-8 block"
             style={{ fontVariationSettings: "'FILL' 1" }}
           >
             format_quote
           </span>
-          <p className="font-[Noto_Serif] text-3xl md:text-4xl italic font-light leading-relaxed mb-12 text-[#1b1c19]">
+          <p className="font-[Noto_Serif] italic font-light leading-relaxed mb-10 sm:mb-12 text-[#1b1c19]"
+            style={{ fontSize: 'clamp(1.3rem, 3.5vw, 2.5rem)' }}>
             "Photography is not about what we see, but the feeling we carry forward into the forever."
           </p>
           <div className="flex flex-col items-center">
@@ -282,21 +298,22 @@ export default function Services() {
       <YouTubeSection />
 
       {/* CTA */}
-      <section className="py-40 px-12 text-center bg-[#fbf9f4]">
-        <span className="text-[10px] tracking-[0.5em] uppercase text-[#775a19] mb-12 block">
+      <section className="py-24 sm:py-32 lg:py-40 px-6 sm:px-12 text-center bg-[#fbf9f4]">
+        <span className="text-[10px] tracking-[0.5em] uppercase text-[#775a19] mb-8 sm:mb-12 block">
           Craft Your Own Monograph
         </span>
-        <h2 className="font-[Noto_Serif] text-5xl md:text-6xl font-light mb-16">
+        <h2 className="font-[Noto_Serif] font-light mb-10 sm:mb-16"
+          style={{ fontSize: 'clamp(2rem, 6vw, 4rem)' }}>
           Let's begin your story.
         </h2>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
           <Link to="/contact">
-            <button className="gold-gradient text-[#261900] px-12 py-5 text-xs tracking-[0.3em] uppercase font-bold rounded-sm shadow-xl hover:scale-[1.02] transition-transform duration-500">
+            <button className="gold-gradient text-[#261900] px-10 sm:px-12 py-4 sm:py-5 text-xs tracking-[0.3em] uppercase font-bold rounded-sm shadow-xl hover:scale-[1.02] transition-transform duration-500">
               Inquire About This Service
             </button>
           </Link>
           <Link to="/gallery">
-            <button className="border-b border-[#1b1c19] text-[#1b1c19] px-12 py-5 text-xs tracking-widest uppercase hover:text-[#775a19] hover:border-[#775a19] transition-all">
+            <button className="border-b border-[#1b1c19] text-[#1b1c19] px-10 sm:px-12 py-4 sm:py-5 text-xs tracking-widest uppercase hover:text-[#775a19] hover:border-[#775a19] transition-all">
               View More Projects
             </button>
           </Link>
