@@ -12,9 +12,9 @@ const YT_HANDLE = '@aamovies5213'
 // Fallback videos — replace IDs with real ones from https://youtube.com/@aamovies5213
 // To get a video ID: open any video → copy URL → the part after ?v= is the ID
 const FALLBACK_VIDEOS = [
-  { id: 'dQw4w9WgXcQ', title: 'Wedding Film — Coming Soon', category: 'Wedding', thumb: null },
-  { id: 'dQw4w9WgXcQ', title: 'Pre-Wedding Shoot', category: 'Pre-Wedding', thumb: null },
-  { id: 'dQw4w9WgXcQ', title: 'Cinematic Highlights', category: 'Highlights', thumb: null },
+  { id: 'gg50ICKRuJE', title: 'A&A Movies — Wedding Film', category: 'Wedding', thumb: `https://img.youtube.com/vi/gg50ICKRuJE/mqdefault.jpg` },
+  { id: 'gg50ICKRuJE', title: 'Cinematic Coverage', category: 'Highlights', thumb: `https://img.youtube.com/vi/gg50ICKRuJE/mqdefault.jpg` },
+  { id: 'gg50ICKRuJE', title: 'A&A Movies Studio', category: 'Events', thumb: `https://img.youtube.com/vi/gg50ICKRuJE/mqdefault.jpg` },
 ]
 
 const services = [
