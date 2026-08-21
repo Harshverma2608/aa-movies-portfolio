@@ -10,7 +10,7 @@ const footerLinks = [
 const socials = [
   { label: 'Instagram', href: 'https://instagram.com', icon: 'photo_camera' },
   { label: 'Facebook', href: 'https://facebook.com', icon: 'thumb_up' },
-  { label: 'YouTube', href: `https://www.youtube.com/channel/UCN560mREywfAGih3Jhycwrg`, icon: 'play_circle' },
+  { label: 'YouTube', href: 'https://youtube.com/@aamovies5213', icon: 'play_circle' },
 ]
 
 export default function Footer() {

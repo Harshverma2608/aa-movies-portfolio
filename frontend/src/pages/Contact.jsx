@@ -343,7 +343,7 @@ export default function Contact() {
                       {[
                         {label:'Instagram', icon:'photo_camera', href:'https://instagram.com'},
                         {label:'Facebook',  icon:'thumb_up',     href:'https://facebook.com'},
-                        {label:'YouTube',   icon:'play_circle',  href:'https://www.youtube.com/channel/UCN560mREywfAGih3Jhycwrg'},
+                        {label:'YouTube',   icon:'play_circle',  href:'https://youtube.com/@aamovies5213'},
                       ].map(({label,icon,href})=>(
                         <a key={label} href={href} target="_blank" rel="noreferrer"
                           className="w-11 h-11 flex items-center justify-center transition-all duration-300 hover:scale-110"
