@@ -1,5 +1,6 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { WA_LINK } from '../App'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IMG } from '../hooks/useMedia'
 import Navbar from '../components/Navbar'
@@ -15,33 +16,33 @@ const albums = {
   'Wedding Albums': [
     {
       name: 'The Classic',
-      size: '12×12 inches',
+      size: '12�12 inches',
       pages: '40 pages',
       material: 'Lay-flat Lustre',
       cover: 'Leatherette',
-      price: '₹16,999',
+      price: '?16,999',
       highlight: false,
       img: IMG.img2,
       desc: 'A timeless lay-flat album with premium lustre pages and a classic leatherette cover.',
     },
     {
       name: 'The Signature',
-      size: '14×14 inches',
+      size: '14�14 inches',
       pages: '60 pages',
       material: 'Lay-flat Metallic',
       cover: 'Genuine Leather',
-      price: '₹28,999',
+      price: '?28,999',
       highlight: true,
       img: IMG.img4,
-      desc: 'Our most popular wedding album — metallic pages that make every image glow, bound in genuine leather.',
+      desc: 'Our most popular wedding album � metallic pages that make every image glow, bound in genuine leather.',
     },
     {
       name: 'The Heirloom',
-      size: '16×16 inches',
+      size: '16�16 inches',
       pages: '80 pages',
       material: 'Fine Art Matte',
       cover: 'Velvet + Acrylic Panel',
-      price: '₹44,999',
+      price: '?44,999',
       highlight: false,
       img: IMG.img3,
       desc: 'Museum-quality fine art matte paper in a velvet-wrapped cover with a custom acrylic photo panel.',
@@ -50,99 +51,99 @@ const albums = {
   'Pre-Wedding': [
     {
       name: 'The Story',
-      size: '10×10 inches',
+      size: '10�10 inches',
       pages: '30 pages',
       material: 'Lay-flat Lustre',
       cover: 'Linen',
-      price: '₹9,999',
+      price: '?9,999',
       highlight: false,
       img: IMG.img5,
       desc: 'A compact, beautifully crafted photobook that tells your pre-wedding story.',
     },
     {
       name: 'The Journey',
-      size: '12×12 inches',
+      size: '12�12 inches',
       pages: '50 pages',
       material: 'Lay-flat Metallic',
       cover: 'Genuine Leather',
-      price: '₹18,999',
+      price: '?18,999',
       highlight: true,
       img: IMG.img6,
       desc: 'Metallic pages that capture the golden hour magic of your pre-wedding shoot.',
     },
     {
       name: 'The Destination',
-      size: '14×14 inches',
+      size: '14�14 inches',
       pages: '60 pages',
       material: 'Fine Art Matte',
       cover: 'Velvet + Acrylic Panel',
-      price: '₹29,999',
+      price: '?29,999',
       highlight: false,
       img: IMG.img2,
-      desc: 'For destination shoots — a luxury fine art album worthy of the journey.',
+      desc: 'For destination shoots � a luxury fine art album worthy of the journey.',
     },
   ],
   Portrait: [
     {
       name: 'The Mini',
-      size: '8×8 inches',
+      size: '8�8 inches',
       pages: '20 pages',
       material: 'Lustre',
       cover: 'Linen',
-      price: '₹5,999',
+      price: '?5,999',
       highlight: false,
       img: IMG.img3,
-      desc: 'A compact portrait book — perfect for individuals, couples, or small families.',
+      desc: 'A compact portrait book � perfect for individuals, couples, or small families.',
     },
     {
       name: 'The Family',
-      size: '12×12 inches',
+      size: '12�12 inches',
       pages: '40 pages',
       material: 'Lay-flat Lustre',
       cover: 'Leatherette',
-      price: '₹13,999',
+      price: '?13,999',
       highlight: true,
       img: IMG.img5,
       desc: 'A generous lay-flat album to preserve your family portraits for generations.',
     },
     {
       name: 'The Heritage',
-      size: '14×14 inches',
+      size: '14�14 inches',
       pages: '60 pages',
       material: 'Fine Art Matte',
       cover: 'Velvet + Acrylic Panel',
-      price: '₹24,999',
+      price: '?24,999',
       highlight: false,
       img: IMG.img4,
-      desc: 'A legacy album — fine art quality that will outlast generations.',
+      desc: 'A legacy album � fine art quality that will outlast generations.',
     },
   ],
   Events: [
     {
       name: 'The Moment',
-      size: '10×10 inches',
+      size: '10�10 inches',
       pages: '30 pages',
       material: 'Lustre',
       cover: 'Linen',
-      price: '₹7,999',
+      price: '?7,999',
       highlight: false,
       img: IMG.img6,
       desc: 'Capture birthdays, anniversaries, and celebrations in a beautiful compact book.',
     },
     {
       name: 'The Celebration',
-      size: '12×12 inches',
+      size: '12�12 inches',
       pages: '50 pages',
       material: 'Lay-flat Metallic',
       cover: 'Leatherette',
-      price: '₹15,999',
+      price: '?15,999',
       highlight: true,
       img: IMG.img2,
       desc: 'Metallic pages that make every celebration look cinematic and grand.',
     },
     {
       name: 'The Corporate',
-      size: '14×14 inches',
+      size: '14�14 inches',
       pages: '60 pages',
       material: 'Fine Art Matte',
       cover: 'Genuine Leather',
@@ -155,7 +156,7 @@ const albums = {
 }
 
 const features = [
-  { icon: 'layers',        title: 'Lay-Flat Binding',    desc: 'Pages open completely flat — no gutter, no lost detail.' },
+  { icon: 'layers',        title: 'Lay-Flat Binding',    desc: 'Pages open completely flat � no gutter, no lost detail.' },
   { icon: 'palette',       title: 'Archival Inks',       desc: 'Fade-resistant prints guaranteed for 100+ years.'        },
   { icon: 'design_services', title: 'Custom Design',     desc: 'Every spread is hand-designed by our album artists.'     },
   { icon: 'verified',      title: 'Quality Checked',     desc: 'Each album is inspected before dispatch.'                },
@@ -171,7 +172,7 @@ export default function Albums() {
     <div className="bg-[#fbf9f4] text-[#1b1c19]">
       <Navbar />
 
-      {/* ── HERO ── */}
+      {/* -- HERO -- */}
       <section className="relative flex items-end overflow-hidden" style={{ minHeight: 'clamp(320px, 55vh, 70vh)', paddingTop: '72px' }}>
         <img src={IMG.hero} alt="Albums" className="absolute inset-0 w-full h-full object-cover animate-slow-zoom" style={{ height: '100%' }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/75" />
@@ -187,7 +188,7 @@ export default function Albums() {
 
       <main className="pb-24">
 
-        {/* ── INTRO ── */}
+        {/* -- INTRO -- */}
         <section className="py-16 sm:py-24 px-6 sm:px-12 bg-[#fbf9f4]">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <FadeLeft>
@@ -211,7 +212,7 @@ export default function Albums() {
           </div>
         </section>
 
-        {/* ── FEATURES ── */}
+        {/* -- FEATURES -- */}
         <section className="py-16 sm:py-20 px-6 sm:px-12 bg-[#f5f3ee]">
           <div className="max-w-7xl mx-auto">
             <FadeUp className="mb-12">
@@ -237,7 +238,7 @@ export default function Albums() {
           </div>
         </section>
 
-        {/* ── TYPE TABS ── */}
+        {/* -- TYPE TABS -- */}
         <section className="sticky top-[60px] z-40 bg-[#fbf9f4]/95 backdrop-blur-md"
           style={{ borderBottom: '1px solid rgba(209,197,180,0.3)' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-12 overflow-x-auto">
@@ -258,7 +259,7 @@ export default function Albums() {
           </div>
         </section>
 
-        {/* ── ALBUM CARDS ── */}
+        {/* -- ALBUM CARDS -- */}
         <section className="py-16 sm:py-24 px-6 sm:px-12">
           <div className="max-w-7xl mx-auto">
             <AnimatePresence mode="wait">
@@ -324,7 +325,7 @@ export default function Albums() {
                           style={{ color: album.highlight ? '#e9c176' : '#1b1c19' }}>
                           {album.price}
                         </p>
-                        <Link to="/contact" style={{ textDecoration: 'none' }}>
+                        <a href={WA_LINK} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
                           <motion.button
                             className="px-6 py-3 text-[10px] tracking-[0.2em] uppercase font-semibold"
                             style={album.highlight ? {
@@ -338,7 +339,7 @@ export default function Albums() {
                             transition={{ type: 'spring', stiffness: 400, damping: 25 }}>
                             Order
                           </motion.button>
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   </motion.div>
@@ -348,7 +349,7 @@ export default function Albums() {
           </div>
         </section>
 
-        {/* ── LIGHTBOX ── */}
+        {/* -- LIGHTBOX -- */}
         <AnimatePresence>
           {lightbox && (
             <motion.div
@@ -371,7 +372,7 @@ export default function Albums() {
           )}
         </AnimatePresence>
 
-        {/* ── PROCESS ── */}
+        {/* -- PROCESS -- */}
         <section className="py-16 sm:py-24 px-6 sm:px-12 bg-[#1b1c19] text-[#fbf9f4] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center">
             <svg width="600" height="600" viewBox="0 0 600 600">
@@ -390,7 +391,7 @@ export default function Albums() {
                 { num: '01', title: 'Photo Selection',  desc: 'You choose your favourite images from our online gallery.' },
                 { num: '02', title: 'Design Draft',     desc: 'Our artists create a custom layout within 7 days.'         },
                 { num: '03', title: 'Your Approval',    desc: 'Review and request up to 2 rounds of revisions.'           },
-                { num: '04', title: 'Print & Deliver',  desc: 'Printed, bound, and delivered to your door in 4–6 weeks.'  },
+                { num: '04', title: 'Print & Deliver',  desc: 'Printed, bound, and delivered to your door in 4�6 weeks.'  },
               ].map((step, i) => (
                 <StaggerItem key={i}>
                   <div className="p-6 sm:p-8" style={{ borderTop: '1px solid rgba(233,193,118,0.15)' }}>
@@ -406,7 +407,7 @@ export default function Albums() {
           </div>
         </section>
 
-        {/* ── CTA ── */}
+        {/* -- CTA -- */}
         <section className="py-24 sm:py-40 px-6 sm:px-12 text-center bg-[#fbf9f4]">
           <FadeUp className="max-w-2xl mx-auto">
             <p className="text-[10px] tracking-[0.5em] uppercase text-[#775a19] mb-6 sm:mb-8">Order Yours</p>
@@ -417,7 +418,7 @@ export default function Albums() {
               </h2>
             </ClipReveal>
             <MagneticButton>
-              <Link to="/contact">
+              <a href={WA_LINK} target="_blank" rel="noreferrer">
                 <motion.button
                   className="gold-gradient text-[#261900] px-10 sm:px-14 py-4 sm:py-5 text-xs tracking-[0.3em] uppercase font-bold rounded-sm"
                   style={{ boxShadow: '0 20px 40px rgba(119,90,25,0.2)' }}
@@ -425,7 +426,7 @@ export default function Albums() {
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
                   Order Your Album
                 </motion.button>
-              </Link>
+              </a>
             </MagneticButton>
           </FadeUp>
         </section>
@@ -435,6 +436,7 @@ export default function Albums() {
     </div>
   )
 }
+
 
 
 

@@ -1,5 +1,6 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { WA_LINK } from '../App'
 import { IMG } from '../hooks/useMedia'
 
 const links = [
@@ -130,7 +131,7 @@ export default function Navbar() {
 
           {/* CTA + HAMBURGER */}
           <div className="flex items-center gap-4">
-            <NavLink to="/contact" className="hidden md:block" style={{ textDecoration: 'none' }}>
+            <a href={WA_LINK} target="_blank" rel="noreferrer" className="hidden md:block" style={{ textDecoration: 'none' }}>
               <button
                 className="relative overflow-hidden text-xs tracking-[0.2em] uppercase font-semibold px-7 py-3 rounded-sm transition-all duration-500"
                 style={{
@@ -188,7 +189,7 @@ export default function Navbar() {
             {label}
           </NavLink>
         ))}
-        <NavLink to="/contact" style={{ textDecoration: 'none' }}>
+        <a href={WA_LINK} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
           <button className="gold-gradient text-[#261900] px-10 py-4 text-xs tracking-[0.2em] uppercase font-bold rounded-sm mt-4">
             Book a Session
           </button>
@@ -197,4 +198,5 @@ export default function Navbar() {
     </>
   )
 }
+
 

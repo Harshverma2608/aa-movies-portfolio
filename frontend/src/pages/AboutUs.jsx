@@ -1,5 +1,6 @@
-ï»¿import { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { WA_LINK } from '../App'
 import { IMG } from '../hooks/useMedia'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -73,7 +74,7 @@ export default function AboutUs() {
               { label: 'Experience', title: 'A Decade of Vision',    body: 'With over ten years behind the lens, we have learned that the best shots are never staged. They are observed.' },
               { label: 'Emotion',    title: 'The Feel of a Frame',   body: "Our work is defined by emotional resonance. We document how it felt to be there, in that specific light, at that exact moment." },
               { label: 'Craft',      title: 'Film & Digital',        body: 'We shoot medium-format film alongside digital capture, blending chemical depth with modern precision.' },
-              { label: 'Approach',   title: 'Unobtrusive Presence',  body: 'We are guests at your event, not directors. Our presence is felt only in the images â€” never in the moment itself.' },
+              { label: 'Approach',   title: 'Unobtrusive Presence',  body: 'We are guests at your event, not directors. Our presence is felt only in the images — never in the moment itself.' },
             ].map((item, i) => (
               <div key={i} className={`reveal reveal-delay-${(i%3)+1}`}>
                 <span className="text-[10px] tracking-widest uppercase text-[#7f7667] mb-4 block">{item.label}</span>
@@ -148,7 +149,7 @@ export default function AboutUs() {
           <span className="material-symbols-outlined text-5xl mb-6 block" style={{ color: '#e9c176', fontVariationSettings: "'FILL' 1" }}>format_quote</span>
           <p className="font-[Noto_Serif] italic font-light leading-relaxed text-[#fbf9f4]"
             style={{ fontSize: 'clamp(1.4rem, 3.5vw, 2rem)' }}>
-            "We don't take photographs. We make them â€” one deliberate frame at a time."
+            "We don't take photographs. We make them — one deliberate frame at a time."
           </p>
           <div className="w-12 h-px mx-auto mt-8" style={{ background: '#e9c176' }} />
         </div>
@@ -168,16 +169,16 @@ export default function AboutUs() {
             Shall we create something timeless?
           </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-            <Link to="/contact">
+            <a href={WA_LINK} target="_blank" rel="noreferrer">
               <button className="gold-gradient text-[#261900] px-10 sm:px-12 py-4 sm:py-5 text-xs tracking-widest uppercase font-bold rounded-sm shadow-[0_20px_40px_rgba(119,90,25,0.2)] hover:scale-[1.02] transition-transform duration-500 animate-gold-pulse">
                 Inquire Now
               </button>
-            </Link>
+            </a>
             <Link to="/gallery">
               <button className="text-[#1b1c19] px-10 sm:px-12 py-4 sm:py-5 text-xs tracking-widest uppercase hover:text-[#775a19] transition-all" style={{ borderBottom: '1px solid #1b1c19' }}>
                 View The Gallery
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -186,4 +187,5 @@ export default function AboutUs() {
     </div>
   )
 }
+
 

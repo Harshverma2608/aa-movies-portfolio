@@ -1,4 +1,4 @@
-﻿import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from '../components/Navbar'
@@ -9,6 +9,7 @@ import {
   FloatElement, GoldLineDraw,
 } from '../components/AnimatedSection'
 import { IMG, useImages } from '../hooks/useMedia'
+import { WA_LINK } from '../App'
 
 const E = [0.16, 1, 0.3, 1]
 
@@ -23,7 +24,7 @@ const services = [
   {
     tag:'Weddings', icon:'favorite',
     title:'Wedding Coverage',
-    desc:'Full-day editorial documentation — from the morning rituals to the last dance. Every stolen glance, preserved.',
+    desc:'Full-day editorial documentation � from the morning rituals to the last dance. Every stolen glance, preserved.',
     img: IMG.img2,
   },
   {
@@ -41,7 +42,7 @@ const services = [
   {
     tag:'Events', icon:'celebration',
     title:'Event Coverage',
-    desc:'Birthdays, corporate events, and celebrations — documented with the same cinematic care as a wedding.',
+    desc:'Birthdays, corporate events, and celebrations � documented with the same cinematic care as a wedding.',
     img: IMG.img6,
   },
 ]
@@ -54,7 +55,7 @@ const portfolio = [
   { src: IMG.img3,  cat:'Weddings',    title:'Sacred Vows',           span:'col-span-1' },
 ]
 
-/* ─── CURSOR ─── */
+/* --- CURSOR --- */
 function Cursor() {
   const dot = useRef(null), ring = useRef(null)
   useEffect(() => {
@@ -94,9 +95,9 @@ export default function Home() {
       <ScrollProgressBar />
       <Navbar />
 
-      {/* ══════════════════════════════════════
-          HERO — auto-sliding images
-      ══════════════════════════════════════ */}
+      {/* --------------------------------------
+          HERO � auto-sliding images
+      -------------------------------------- */}
       <section className="relative w-full flex items-center justify-center overflow-hidden" style={{ height: '100dvh' }}>
         {/* Background slides */}
         <div className="absolute inset-0 z-0" style={{ height: '100%' }}>
@@ -178,14 +179,14 @@ export default function Home() {
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.7, ease: E }}>
             <MagneticButton>
-              <Link to="/contact">
+              <a href={WA_LINK} target="_blank" rel="noreferrer">
                 <motion.button
                   className="gold-gradient text-[#261900] px-8 py-3 text-xs tracking-[0.25em] uppercase font-bold rounded-sm"
                   whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 25 }}>
                   Book a Session
                 </motion.button>
-              </Link>
+              </a>
             </MagneticButton>
             <MagneticButton>
               <Link to="/gallery">
@@ -197,7 +198,7 @@ export default function Home() {
                   transition={{ type: 'spring', stiffness: 400, damping: 25 }}>
                   View Gallery
                 </motion.button>
-              </Link>
+              </a>
             </MagneticButton>
           </motion.div>
 
@@ -209,28 +210,28 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ══════════════════════════════════════
+      {/* --------------------------------------
           MARQUEE TICKER
-      ══════════════════════════════════════ */}
+      -------------------------------------- */}
       <div className="bg-[#1b1c19] py-3 overflow-hidden">
         <motion.div
           className="flex whitespace-nowrap"
           animate={{ x: ['0%', '-50%'] }}
           transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}>
-          {['Weddings','·','Portraits','·','Pre-Wedding','·','Events','·','Albums','·','Films','·',
-            'Weddings','·','Portraits','·','Pre-Wedding','·','Events','·','Albums','·','Films','·'].map((w, i) => (
+          {['Weddings','�','Portraits','�','Pre-Wedding','�','Events','�','Albums','�','Films','�',
+            'Weddings','�','Portraits','�','Pre-Wedding','�','Events','�','Albums','�','Films','�'].map((w, i) => (
             <span key={i}
               className="inline-block mx-5 font-oswald text-[11px] tracking-[0.3em] uppercase flex-shrink-0"
-              style={{ color: w === '·' ? '#e9c176' : 'rgba(251,249,244,0.4)' }}>
+              style={{ color: w === '�' ? '#e9c176' : 'rgba(251,249,244,0.4)' }}>
               {w}
             </span>
           ))}
         </motion.div>
       </div>
 
-      {/* ══════════════════════════════════════
+      {/* --------------------------------------
           STATS
-      ══════════════════════════════════════ */}
+      -------------------------------------- */}
       <section className="py-16 sm:py-20 px-6 sm:px-12 bg-[#f5f3ee]">
         <StaggerContainer
           className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8"
@@ -248,13 +249,13 @@ export default function Home() {
         </StaggerContainer>
       </section>
 
-      {/* ══════════════════════════════════════
+      {/* --------------------------------------
           ABOUT / PHILOSOPHY
-      ══════════════════════════════════════ */}
+      -------------------------------------- */}
       <section className="py-16 sm:py-24 px-6 sm:px-12 bg-[#fbf9f4]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          {/* Image — clean, no floating elements */}
+          {/* Image � clean, no floating elements */}
           <FadeLeft>
             <div className="relative w-full">
               {/* Main image */}
@@ -262,7 +263,7 @@ export default function Home() {
                 <img src={IMG.img2} alt="A&A Movies Studio"
                   className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" />
               </div>
-              {/* Accent image — hidden on mobile to prevent overflow */}
+              {/* Accent image � hidden on mobile to prevent overflow */}
               <div className="absolute bottom-3 right-3 w-20 sm:w-24 border-2 border-[#fbf9f4] overflow-hidden shadow-lg hidden sm:block">
                 <div className="aspect-[4/3]">
                   <img src={IMG.img7} alt="" loading="lazy"
@@ -286,22 +287,22 @@ export default function Home() {
               traditional portraiture.
             </p>
             <p className="text-[#4e4639] leading-relaxed text-sm sm:text-base mb-7 max-w-lg">
-              Our approach is observational yet intentional — every frame a deliberate piece of art.
+              Our approach is observational yet intentional � every frame a deliberate piece of art.
             </p>
             <motion.div whileHover={{ x: 5 }} transition={{ type: 'spring', stiffness: 300 }}>
               <Link to="/about"
                 className="inline-block font-oswald text-xs tracking-widest uppercase pb-1 hover:text-[#775a19] transition-colors"
                 style={{ borderBottom: '1px solid #1b1c19', textDecoration: 'none', color: '#1b1c19' }}>
                 Discover the Studio
-              </Link>
+              </a>
             </motion.div>
           </FadeRight>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          SERVICES — 4 cards, clean grid
-      ══════════════════════════════════════ */}
+      {/* --------------------------------------
+          SERVICES � 4 cards, clean grid
+      -------------------------------------- */}
       <section className="py-16 sm:py-24 px-6 sm:px-12 bg-[#f5f3ee]">
         <div className="max-w-7xl mx-auto">
           <FadeUp className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
@@ -314,8 +315,8 @@ export default function Home() {
             <Link to="/packages"
               className="font-oswald text-[10px] tracking-widest uppercase opacity-50 hover:opacity-100 transition-opacity self-start sm:self-auto"
               style={{ textDecoration: 'none', color: '#1b1c19' }}>
-              View Packages →
-            </Link>
+              View Packages ?
+            </a>
           </FadeUp>
 
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" stagger={0.08}>
@@ -336,16 +337,16 @@ export default function Home() {
                       <p className="text-[#4e4639] text-xs leading-relaxed">{svc.desc}</p>
                     </div>
                   </motion.div>
-                </Link>
+                </a>
               </StaggerItem>
             ))}
           </StaggerContainer>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
+      {/* --------------------------------------
           PORTFOLIO GRID
-      ══════════════════════════════════════ */}
+      -------------------------------------- */}
       <section className="py-16 sm:py-24 px-6 sm:px-12 bg-[#fbf9f4]">
         <div className="max-w-7xl mx-auto">
           <FadeUp className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
@@ -358,8 +359,8 @@ export default function Home() {
             <Link to="/gallery"
               className="font-oswald text-[10px] tracking-widest uppercase opacity-50 hover:opacity-100 transition-opacity self-start sm:self-auto"
               style={{ textDecoration: 'none', color: '#1b1c19' }}>
-              View Full Archive →
-            </Link>
+              View Full Archive ?
+            </a>
           </FadeUp>
 
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-3" stagger={0.08} delay={0.1}>
@@ -382,16 +383,16 @@ export default function Home() {
                       </div>
                     </motion.div>
                   </motion.div>
-                </Link>
+                </a>
               </StaggerItem>
             ))}
           </StaggerContainer>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
+      {/* --------------------------------------
           DARK CRAFT BAND
-      ══════════════════════════════════════ */}
+      -------------------------------------- */}
       <section className="py-16 sm:py-20 px-6 sm:px-12 bg-[#1b1c19] relative overflow-hidden">
         {/* Background aperture rings */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
@@ -416,15 +417,15 @@ export default function Home() {
             Every frame is a <span className="italic" style={{ color: '#e9c176' }}>deliberate decision</span>.
           </h3>
           <p className="text-sm leading-relaxed max-w-xl mx-auto" style={{ color: '#d1c5b4' }}>
-            Medium-format film alongside digital capture — blending chemical depth with modern precision.
+            Medium-format film alongside digital capture � blending chemical depth with modern precision.
             The result is imagery that feels both timeless and alive.
           </p>
         </FadeUp>
       </section>
 
-      {/* ══════════════════════════════════════
+      {/* --------------------------------------
           TESTIMONIAL
-      ══════════════════════════════════════ */}
+      -------------------------------------- */}
       <section className="py-16 sm:py-24 px-6 sm:px-12 bg-[#fbf9f4]">
         <FadeUp className="max-w-2xl mx-auto text-center">
           <motion.span
@@ -444,9 +445,9 @@ export default function Home() {
         </FadeUp>
       </section>
 
-      {/* ══════════════════════════════════════
+      {/* --------------------------------------
           CTA
-      ══════════════════════════════════════ */}
+      -------------------------------------- */}
       <section className="py-16 sm:py-24 px-6 sm:px-12 text-center bg-[#f5f3ee] relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none">
           <motion.svg width="400" height="400" viewBox="0 0 400 400"
@@ -465,7 +466,7 @@ export default function Home() {
           </h2>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <MagneticButton>
-              <Link to="/contact">
+              <a href={WA_LINK} target="_blank" rel="noreferrer">
                 <motion.button
                   className="gold-gradient text-[#261900] px-10 py-3.5 text-xs tracking-[0.3em] uppercase font-bold rounded-sm"
                   style={{ boxShadow: '0 12px 24px rgba(119,90,25,0.18)' }}
@@ -473,7 +474,7 @@ export default function Home() {
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
                   Book a Session
                 </motion.button>
-              </Link>
+              </a>
             </MagneticButton>
             <MagneticButton>
               <Link to="/gallery">
@@ -484,7 +485,7 @@ export default function Home() {
                   transition={{ type: 'spring', stiffness: 300 }}>
                   View Gallery
                 </motion.button>
-              </Link>
+              </a>
             </MagneticButton>
           </div>
         </FadeUp>

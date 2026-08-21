@@ -1,5 +1,6 @@
-ï»¿import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { WA_LINK } from '../App'
 import { IMG } from '../hooks/useMedia'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -20,7 +21,7 @@ const services = [
     collection: 'Collection I',
     title: 'The Wedding Monograph',
     subtitle: 'A Story in Motion',
-    description: `In the quiet corners of Jaipur's grand palaces, where the architecture whispers centuries of heritage, we capture a story that feels less like a day and more like a lifetime. The Monograph is our signature approach â€” an editorial synthesis of motion and still imagery designed to preserve the visceral feeling of the moment.`,
+    description: `In the quiet corners of Jaipur's grand palaces, where the architecture whispers centuries of heritage, we capture a story that feels less like a day and more like a lifetime. The Monograph is our signature approach — an editorial synthesis of motion and still imagery designed to preserve the visceral feeling of the moment.`,
     detail: `This project is defined by its intimacy. Our focus is not merely on the ceremony, but the stolen glances, the texture of the bridal lehenga, and the way light dances across the marble terrace at the stroke of golden hour.`,
     images: [IMG.img2, IMG.img3, IMG.img4, IMG.img5, IMG.img6],
     heroImg: IMG.hero,
@@ -30,7 +31,7 @@ const services = [
     collection: 'Collection II',
     title: 'The Pre-Wedding Edit',
     subtitle: 'Before Forever',
-    description: `A pre-wedding session is not a rehearsal â€” it is its own story. We scout locations that carry meaning, craft light that flatters, and create an atmosphere where two people forget the camera exists entirely.`,
+    description: `A pre-wedding session is not a rehearsal — it is its own story. We scout locations that carry meaning, craft light that flatters, and create an atmosphere where two people forget the camera exists entirely.`,
     detail: `From the golden wheat fields of Rajasthan to the misty ghats of Varanasi, every location becomes a canvas. We bring the same editorial rigour to your pre-wedding as we do to the ceremony itself.`,
     images: [IMG.img3, IMG.img4, IMG.img5, IMG.img6, IMG.img2],
     heroImg: IMG.img3,
@@ -40,7 +41,7 @@ const services = [
     collection: 'Collection III',
     title: 'The Portrait Session',
     subtitle: 'The Heritage Series',
-    description: `A portrait is an act of preservation. We work with natural light and architectural spaces to create images that feel timeless â€” photographs that belong in a frame on a wall, not lost in a phone gallery.`,
+    description: `A portrait is an act of preservation. We work with natural light and architectural spaces to create images that feel timeless — photographs that belong in a frame on a wall, not lost in a phone gallery.`,
     detail: `Our portrait sessions are unhurried. We spend time understanding who you are before we ever raise the camera. The result is an image that feels like you, at your most authentic.`,
     images: [IMG.img5, IMG.img6, IMG.img2, IMG.img3, IMG.img4],
     heroImg: IMG.img5,
@@ -48,7 +49,7 @@ const services = [
   },
 ]
 
-// YouTube embed component â€” uses nocookie domain for privacy
+// YouTube embed component — uses nocookie domain for privacy
 function YouTubeSection() {
   const [videos, setVideos] = useState(FALLBACK_VIDEOS)
   const [active, setActive] = useState(0)
@@ -86,7 +87,7 @@ function YouTubeSection() {
           <span className="text-[10px] tracking-[0.4em] uppercase text-[#775a19] mb-4 block">Cinematic</span>
           <h2 className="font-[Noto_Serif] font-light" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>Featured Films</h2>
           <p className="text-[#4e4639] mt-4 max-w-lg text-sm sm:text-base">
-            Watch our latest work directly from the studio. Every film is a complete narrative â€” not a highlight reel.
+            Watch our latest work directly from the studio. Every film is a complete narrative — not a highlight reel.
           </p>
         </div>
 
@@ -142,7 +143,7 @@ function YouTubeSection() {
   )
 }
 
-// Single service section â€” matches the screenshot layout exactly
+// Single service section — matches the screenshot layout exactly
 function ServiceBlock({ service, index }) {
   const isEven = index % 2 === 0
   const [imgs] = useState(service.images)
@@ -181,7 +182,7 @@ function ServiceBlock({ service, index }) {
       <div className={`py-16 sm:py-24 lg:py-32 px-6 sm:px-12 ${index % 2 === 0 ? 'bg-[#fbf9f4]' : 'bg-[#f5f3ee]'}`}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-start">
 
-          {/* Text â€” asymmetric offset */}
+          {/* Text — asymmetric offset */}
           <div className={`md:col-span-5 ${isEven ? 'md:col-start-1' : 'md:col-start-8 md:row-start-1'}`}>
             <h3 className="font-[Noto_Serif] font-light leading-tight mb-6 sm:mb-8"
               style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.5rem)' }}>
@@ -199,7 +200,7 @@ function ServiceBlock({ service, index }) {
             </a>
           </div>
 
-          {/* Large image â€” offset opposite side */}
+          {/* Large image — offset opposite side */}
           <div className={`md:col-span-6 ${isEven ? 'md:col-start-7' : 'md:col-start-1 md:row-start-1'}`}>
             <img
               src={imgs[0]}
@@ -210,7 +211,7 @@ function ServiceBlock({ service, index }) {
         </div>
       </div>
 
-      {/* Detail focus â€” responsive photo grid */}
+      {/* Detail focus — responsive photo grid */}
       <div className={`py-10 sm:py-16 px-6 sm:px-12 ${index % 2 === 0 ? 'bg-[#f5f3ee]' : 'bg-[#fbf9f4]'}`}>
         <div className="max-w-7xl mx-auto">
           <span className="text-[10px] tracking-[0.4em] uppercase text-[#7f7667] mb-6 sm:mb-12 block">
@@ -308,16 +309,16 @@ export default function Services() {
           Let's begin your story.
         </h2>
         <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-          <Link to="/contact">
+          <a href={WA_LINK} target="_blank" rel="noreferrer">
             <button className="gold-gradient text-[#261900] px-10 sm:px-12 py-4 sm:py-5 text-xs tracking-[0.3em] uppercase font-bold rounded-sm shadow-xl hover:scale-[1.02] transition-transform duration-500">
               Inquire About This Service
             </button>
-          </Link>
+          </a>
           <Link to="/gallery">
             <button className="border-b border-[#1b1c19] text-[#1b1c19] px-10 sm:px-12 py-4 sm:py-5 text-xs tracking-widest uppercase hover:text-[#775a19] hover:border-[#775a19] transition-all">
               View More Projects
             </button>
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -325,4 +326,5 @@ export default function Services() {
     </div>
   )
 }
+
 

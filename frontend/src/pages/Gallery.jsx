@@ -1,5 +1,6 @@
-﻿import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { WA_LINK } from '../App'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -59,7 +60,7 @@ export default function Gallery() {
       <ScrollProgressBar/>
       <Navbar/>
 
-      {/* ── HERO ── */}
+      {/* -- HERO -- */}
       <section className="relative flex items-end overflow-hidden" style={{ minHeight: 'clamp(320px, 55vh, 70vh)', paddingTop: '72px' }}>
         <img src={IMG.hero} alt="Gallery"
           className="absolute inset-0 w-full h-full object-cover object-center"
@@ -75,14 +76,14 @@ export default function Gallery() {
             Visual Narratives
           </h1>
           <p className="animate-fade-up-delay2 text-sm text-[#fbf9f4] opacity-70 mt-2 max-w-lg">
-            {galleryImages.length} frames — a timeless collection of human connection.
+            {galleryImages.length} frames � a timeless collection of human connection.
           </p>
         </div>
       </section>
 
       <main className="pb-24">
 
-        {/* ── FILTER ── */}
+        {/* -- FILTER -- */}
         <section className="px-6 sm:px-12 py-10 max-w-7xl mx-auto">
           <div className="flex flex-wrap gap-4 sm:gap-8 items-center justify-between">
             <div className="flex flex-wrap gap-4 sm:gap-6">
@@ -104,7 +105,7 @@ export default function Gallery() {
           </div>
         </section>
 
-        {/* ── MASONRY GRID ── */}
+        {/* -- MASONRY GRID -- */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto">
           <AnimatePresence mode="wait">
             <motion.div key={active} className="masonry-grid"
@@ -130,7 +131,7 @@ export default function Gallery() {
           </AnimatePresence>
         </section>
 
-        {/* ── LIGHTBOX ── */}
+        {/* -- LIGHTBOX -- */}
         <AnimatePresence>
           {lightbox && (
             <motion.div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
@@ -149,7 +150,7 @@ export default function Gallery() {
           )}
         </AnimatePresence>
 
-        {/* ── SLIDER ── */}
+        {/* -- SLIDER -- */}
         <section className="mt-20 sm:mt-28 px-6 sm:px-12 max-w-7xl mx-auto">
           <FadeUp className="mb-8">
             <p className="text-[10px] tracking-[0.4em] uppercase text-[#775a19] mb-2">Featured Work</p>
@@ -190,7 +191,7 @@ export default function Gallery() {
           </div>
         </section>
 
-        {/* ── VIDEO ── */}
+        {/* -- VIDEO -- */}
         <section className="mt-20 sm:mt-28 bg-[#1b1c19] text-white py-16 sm:py-24 px-6 sm:px-12 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center">
             <svg width="500" height="500" viewBox="0 0 500 500">
@@ -207,19 +208,19 @@ export default function Gallery() {
             </div>
             <h4 className="font-[Noto_Serif] text-xl sm:text-2xl font-light mt-8">Grand Wedding @ Le Meridien, Jaipur</h4>
             <p className="mt-3 max-w-xl mx-auto text-sm" style={{color:'#d1c5b4'}}>
-              Ayush and Diksha — a journey of love and happiness, preserved forever.
+              Ayush and Diksha � a journey of love and happiness, preserved forever.
             </p>
           </FadeUp>
         </section>
 
-        {/* ── DOWNLOADS — auto from /public/files/ ── */}
+        {/* -- DOWNLOADS � auto from /public/files/ -- */}
         {allPDFs.length > 0 && (
           <section className="py-16 sm:py-24 px-6 sm:px-12 max-w-7xl mx-auto">
             <FadeUp className="mb-10">
               <p className="text-[10px] tracking-[0.4em] uppercase text-[#775a19] mb-2">Resources</p>
               <h3 className="font-[Noto_Serif] text-3xl sm:text-4xl font-light">Downloads</h3>
               <p className="text-[#4e4639] text-sm mt-2">
-                Drop any PDF into <code className="bg-[#f5f3ee] px-1 text-xs">public/files/</code> — it appears here automatically.
+                Drop any PDF into <code className="bg-[#f5f3ee] px-1 text-xs">public/files/</code> � it appears here automatically.
               </p>
             </FadeUp>
             {allPDFs.map((pdf,i)=>(
@@ -245,7 +246,7 @@ export default function Gallery() {
           </section>
         )}
 
-        {/* ── PDF VIEWER ── */}
+        {/* -- PDF VIEWER -- */}
         {allPDFs.length > 0 && (
           <section className="py-16 sm:py-20 px-6 sm:px-12 bg-[#f5f3ee] text-center">
             <FadeUp>
@@ -254,7 +255,7 @@ export default function Gallery() {
               <a href={allPDFs[0].url} target="_blank" rel="noreferrer"
                 className="inline-block mb-8 text-xs tracking-widest uppercase pb-1 hover:text-[#775a19] transition-all"
                 style={{borderBottom:'1px solid #1b1c19'}}>
-                Download PDF →
+                Download PDF ?
               </a>
               <div className="flex justify-center">
                 <iframe src={allPDFs[0].url} title="PDF Viewer"
@@ -264,7 +265,7 @@ export default function Gallery() {
           </section>
         )}
 
-        {/* ── CTA ── */}
+        {/* -- CTA -- */}
         <section className="py-24 sm:py-32 px-6 sm:px-12 text-center bg-[#fbf9f4] relative overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
             <svg width="500" height="500" viewBox="0 0 500 500">
@@ -277,21 +278,21 @@ export default function Gallery() {
               We accept a limited number of commissions each year to ensure every client receives our full creative focus.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/contact">
+              <a href={WA_LINK} target="_blank" rel="noreferrer">
                 <motion.button className="gold-gradient text-[#261900] px-10 py-4 text-xs tracking-[0.2em] uppercase font-bold rounded-sm"
                   style={{boxShadow:'0 20px 40px rgba(119,90,25,0.15)'}}
                   whileHover={{scale:1.03}} whileTap={{scale:0.97}}
                   transition={{type:'spring',stiffness:300,damping:20}}>
                   Check Availability
                 </motion.button>
-              </Link>
+              </a>
               <Link to="/offerings">
                 <motion.button className="text-[#1b1c19] px-10 py-4 text-xs tracking-widest uppercase hover:text-[#775a19] transition-all"
                   style={{borderBottom:'1px solid #1b1c19'}}
                   whileHover={{borderBottomColor:'#775a19'}}>
                   View Services
                 </motion.button>
-              </Link>
+              </a>
             </div>
           </FadeUp>
         </section>
@@ -301,5 +302,6 @@ export default function Gallery() {
     </div>
   )
 }
+
 
 

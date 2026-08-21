@@ -10,9 +10,10 @@ import Albums    from './pages/Albums'
 
 const ease = [0.76, 0, 0.24, 1]
 
-// WhatsApp number — include country code, no + or spaces
-const WA_NUMBER = '919837739595'
-const WA_MESSAGE = encodeURIComponent('Hi A&A Movies! I would like to enquire about your photography services.')
+// ── WhatsApp config ──────────────────────────────────────────────
+export const WA_NUMBER  = '919837739595'
+export const WA_MESSAGE = encodeURIComponent('Hi A&A Movies! I would like to enquire about your photography services.')
+export const WA_LINK    = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`
 
 function PageWrapper({ children }) {
   return (
@@ -38,7 +39,7 @@ function PageWrapper({ children }) {
 function WhatsAppButton() {
   return (
     <motion.a
-      href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
+      href={WA_LINK}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"

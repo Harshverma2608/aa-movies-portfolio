@@ -1,12 +1,13 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { WA_LINK } from '../App'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IMG } from '../hooks/useMedia'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { FadeUp, StaggerContainer, StaggerItem, ClipReveal, GoldLineDraw } from '../components/AnimatedSection'
 
-/* ─── PACKAGE DATA ─── */
+/* --- PACKAGE DATA --- */
 const eventTypes = ['Wedding', 'Pre-Wedding', 'Portrait', 'Birthday & Events']
 
 const packages = {
@@ -14,7 +15,7 @@ const packages = {
     {
       name: 'Silver',
       tag: 'Essential',
-      price: '₹49,999',
+      price: '?49,999',
       duration: '1 Day',
       highlight: false,
       features: [
@@ -30,7 +31,7 @@ const packages = {
     {
       name: 'Gold',
       tag: 'Most Popular',
-      price: '₹89,999',
+      price: '?89,999',
       duration: '2 Days',
       highlight: true,
       features: [
@@ -48,7 +49,7 @@ const packages = {
     {
       name: 'Platinum',
       tag: 'Premium',
-      price: '₹1,49,999',
+      price: '?1,49,999',
       duration: '3 Days',
       highlight: false,
       features: [
@@ -70,8 +71,8 @@ const packages = {
     {
       name: 'Classic',
       tag: 'Essential',
-      price: '₹19,999',
-      duration: '3–4 Hours',
+      price: '?19,999',
+      duration: '3�4 Hours',
       highlight: false,
       features: [
         '1 Location',
@@ -85,11 +86,11 @@ const packages = {
     {
       name: 'Signature',
       tag: 'Most Popular',
-      price: '₹34,999',
+      price: '?34,999',
       duration: 'Full Day',
       highlight: true,
       features: [
-        '2–3 Locations',
+        '2�3 Locations',
         '1 Photographer + Assistant',
         '300+ Edited Photos',
         'Short Film (2 min)',
@@ -121,7 +122,7 @@ const packages = {
     {
       name: 'Mini',
       tag: 'Quick Session',
-      price: '₹7,999',
+      price: '?7,999',
       duration: '1 Hour',
       highlight: false,
       features: [
@@ -135,29 +136,29 @@ const packages = {
     {
       name: 'Standard',
       tag: 'Most Popular',
-      price: '₹14,999',
-      duration: '2–3 Hours',
+      price: '?14,999',
+      duration: '2�3 Hours',
       highlight: true,
       features: [
         '2 Locations',
         '120+ Edited Photos',
         'Premium Retouch',
         'Online Gallery (1 Year)',
-        '10 Printed Photos (5×7)',
+        '10 Printed Photos (5�7)',
       ],
       note: 'Ideal for families & professionals',
     },
     {
       name: 'Heritage',
       tag: 'Premium',
-      price: '₹24,999',
+      price: '?24,999',
       duration: 'Full Day',
       highlight: false,
       features: [
         'Multiple Locations',
         '250+ Edited Photos',
         'Fine Art Retouch',
-        'Framed Print (16×20)',
+        'Framed Print (16�20)',
         'Luxury Photobook',
         'Lifetime Online Gallery',
       ],
@@ -168,7 +169,7 @@ const packages = {
     {
       name: 'Basic',
       tag: 'Essential',
-      price: '₹12,999',
+      price: '?12,999',
       duration: '3 Hours',
       highlight: false,
       features: [
@@ -182,7 +183,7 @@ const packages = {
     {
       name: 'Premium',
       tag: 'Most Popular',
-      price: '₹24,999',
+      price: '?24,999',
       duration: '6 Hours',
       highlight: true,
       features: [
@@ -215,14 +216,14 @@ const packages = {
 }
 
 const addOns = [
-  { icon: 'photo_album',    label: 'Extra Album Pages',    price: '₹500 / page'   },
-  { icon: 'movie',          label: 'Extended Film Edit',   price: '₹8,000'        },
+  { icon: 'photo_album',    label: 'Extra Album Pages',    price: '?500 / page'   },
+  { icon: 'movie',          label: 'Extended Film Edit',   price: '?8,000'        },
   { icon: 'flight',         label: 'Outstation Travel',    price: 'At Actuals'    },
-  { icon: 'frame_person',   label: 'Extra Photographer',   price: '₹6,000 / day'  },
-  { icon: 'hdr_strong',     label: 'Drone Coverage',       price: '₹5,000'        },
-  { icon: 'speed',          label: 'Express Delivery',     price: '₹3,000'        },
-  { icon: 'print',          label: 'Canvas Print (24×36)', price: '₹4,500'        },
-  { icon: 'slideshow',      label: 'Teaser Reel (60 sec)', price: '₹4,000'        },
+  { icon: 'frame_person',   label: 'Extra Photographer',   price: '?6,000 / day'  },
+  { icon: 'hdr_strong',     label: 'Drone Coverage',       price: '?5,000'        },
+  { icon: 'speed',          label: 'Express Delivery',     price: '?3,000'        },
+  { icon: 'print',          label: 'Canvas Print (24�36)', price: '?4,500'        },
+  { icon: 'slideshow',      label: 'Teaser Reel (60 sec)', price: '?4,000'        },
 ]
 
 export default function Packages() {
@@ -232,7 +233,7 @@ export default function Packages() {
     <div className="bg-[#fbf9f4] text-[#1b1c19]">
       <Navbar />
 
-      {/* ── HERO ── */}
+      {/* -- HERO -- */}
       <section className="relative flex items-end overflow-hidden" style={{ minHeight: 'clamp(320px, 55vh, 70vh)', paddingTop: '72px' }}>
         <img src={IMG.hero} alt="Packages" className="absolute inset-0 w-full h-full object-cover animate-slow-zoom" style={{ height: '100%' }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/75"/>
@@ -249,7 +250,7 @@ export default function Packages() {
 
       <main className="pb-24">
 
-        {/* ── EVENT TYPE TABS ── */}
+        {/* -- EVENT TYPE TABS -- */}
         <section className="sticky top-[60px] z-40 bg-[#fbf9f4]/95 backdrop-blur-md border-b border-[#d1c5b4]/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-12 overflow-x-auto">
             <div className="flex gap-0 min-w-max sm:min-w-0">
@@ -271,7 +272,7 @@ export default function Packages() {
           </div>
         </section>
 
-        {/* ── PACKAGE CARDS ── */}
+        {/* -- PACKAGE CARDS -- */}
         <section className="py-16 sm:py-24 px-4 sm:px-12">
           <div className="max-w-7xl mx-auto">
             <FadeUp className="mb-10 sm:mb-16">
@@ -354,7 +355,7 @@ export default function Packages() {
                       </p>
 
                       {/* CTA */}
-                      <Link to="/contact" style={{ textDecoration:'none' }}>
+                      <a href={WA_LINK} target="_blank" rel="noreferrer" style={{ textDecoration:'none' }}>
                         <motion.button
                           className="w-full py-4 text-xs tracking-[0.2em] uppercase font-semibold transition-all duration-300"
                           style={pkg.highlight ? {
@@ -369,7 +370,7 @@ export default function Packages() {
                           transition={{ type:'spring', stiffness:400, damping:25 }}>
                           Book This Package
                         </motion.button>
-                      </Link>
+                      </a>
                     </div>
                   </motion.div>
                 ))}
@@ -378,7 +379,7 @@ export default function Packages() {
           </div>
         </section>
 
-        {/* ── ADD-ONS ── */}
+        {/* -- ADD-ONS -- */}
         <section className="py-16 sm:py-24 px-4 sm:px-12 bg-[#f5f3ee]">
           <div className="max-w-7xl mx-auto">
             <FadeUp className="mb-10 sm:mb-16">
@@ -407,7 +408,7 @@ export default function Packages() {
           </div>
         </section>
 
-        {/* ── NOTES ── */}
+        {/* -- NOTES -- */}
         <section className="py-12 sm:py-16 px-4 sm:px-12 bg-[#fbf9f4]">
           <div className="max-w-4xl mx-auto">
             <FadeUp>
@@ -417,7 +418,7 @@ export default function Packages() {
                   'All prices are starting prices. Final quote depends on location, travel, and specific requirements.',
                   'A 30% advance is required to confirm the booking. Balance due 7 days before the event.',
                   'Travel charges apply for locations outside Agra/Mathura. Outstation stays at actuals.',
-                  'Edited photos are delivered within 3–4 weeks. Albums take 6–8 weeks after photo selection.',
+                  'Edited photos are delivered within 3�4 weeks. Albums take 6�8 weeks after photo selection.',
                   'All packages include full copyright of images for personal use. Commercial use requires separate licensing.',
                   'Cancellation policy: 50% refund if cancelled 30+ days before event. No refund within 30 days.',
                 ].map((note, i) => (
@@ -432,7 +433,7 @@ export default function Packages() {
           </div>
         </section>
 
-        {/* ── CTA ── */}
+        {/* -- CTA -- */}
         <section className="py-24 sm:py-40 px-4 sm:px-12 text-center bg-[#f5f3ee] relative overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none">
             <svg width="500" height="500" viewBox="0 0 500 500">
@@ -452,7 +453,7 @@ export default function Packages() {
             <p className="text-[#4e4639] mb-8 sm:mb-12 text-sm sm:text-base">
               Every event is unique. Reach out and we'll craft a bespoke quote tailored to your vision and budget.
             </p>
-            <Link to="/contact">
+            <a href={WA_LINK} target="_blank" rel="noreferrer">
               <motion.button
                 className="gold-gradient text-[#261900] px-10 sm:px-14 py-4 sm:py-5 text-xs tracking-[0.3em] uppercase font-bold rounded-sm"
                 style={{ boxShadow:'0 20px 40px rgba(119,90,25,0.2)' }}
@@ -460,7 +461,7 @@ export default function Packages() {
                 transition={{ type:'spring', stiffness:300, damping:20 }}>
                 Get a Custom Quote
               </motion.button>
-            </Link>
+            </a>
           </FadeUp>
         </section>
       </main>
@@ -469,6 +470,7 @@ export default function Packages() {
     </div>
   )
 }
+
 
 
 
