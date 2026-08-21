@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+ï»¿import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from '../components/Navbar'
@@ -24,7 +24,7 @@ const services = [
   {
     tag:'Weddings', icon:'favorite',
     title:'Wedding Coverage',
-    desc:'Full-day editorial documentation — from the morning rituals to the last dance. Every stolen glance, preserved.',
+    desc:'Full-day editorial documentation â€” from the morning rituals to the last dance. Every stolen glance, preserved.',
     img: IMG.img2,
   },
   {
@@ -42,7 +42,7 @@ const services = [
   {
     tag:'Events', icon:'celebration',
     title:'Event Coverage',
-    desc:'Birthdays, corporate events, and celebrations — documented with the same cinematic care as a wedding.',
+    desc:'Birthdays, corporate events, and celebrations â€” documented with the same cinematic care as a wedding.',
     img: IMG.img6,
   },
 ]
@@ -96,7 +96,7 @@ export default function Home() {
       <Navbar />
 
       {/* --------------------------------------
-          HERO — auto-sliding images
+          HERO â€” auto-sliding images
       -------------------------------------- */}
       <section className="relative w-full flex items-center justify-center overflow-hidden" style={{ height: '100dvh' }}>
         {/* Background slides */}
@@ -198,7 +198,7 @@ export default function Home() {
                   transition={{ type: 'spring', stiffness: 400, damping: 25 }}>
                   View Gallery
                 </motion.button>
-              </a>
+              </Link>
             </MagneticButton>
           </motion.div>
 
@@ -218,11 +218,11 @@ export default function Home() {
           className="flex whitespace-nowrap"
           animate={{ x: ['0%', '-50%'] }}
           transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}>
-          {['Weddings','·','Portraits','·','Pre-Wedding','·','Events','·','Albums','·','Films','·',
-            'Weddings','·','Portraits','·','Pre-Wedding','·','Events','·','Albums','·','Films','·'].map((w, i) => (
+          {['Weddings','Â·','Portraits','Â·','Pre-Wedding','Â·','Events','Â·','Albums','Â·','Films','Â·',
+            'Weddings','Â·','Portraits','Â·','Pre-Wedding','Â·','Events','Â·','Albums','Â·','Films','Â·'].map((w, i) => (
             <span key={i}
               className="inline-block mx-5 font-oswald text-[11px] tracking-[0.3em] uppercase flex-shrink-0"
-              style={{ color: w === '·' ? '#e9c176' : 'rgba(251,249,244,0.4)' }}>
+              style={{ color: w === 'Â·' ? '#e9c176' : 'rgba(251,249,244,0.4)' }}>
               {w}
             </span>
           ))}
@@ -255,7 +255,7 @@ export default function Home() {
       <section className="py-16 sm:py-24 px-6 sm:px-12 bg-[#fbf9f4]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          {/* Image — clean, no floating elements */}
+          {/* Image â€” clean, no floating elements */}
           <FadeLeft>
             <div className="relative w-full">
               {/* Main image */}
@@ -263,7 +263,7 @@ export default function Home() {
                 <img src={IMG.img2} alt="A&A Movies Studio"
                   className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" />
               </div>
-              {/* Accent image — hidden on mobile to prevent overflow */}
+              {/* Accent image â€” hidden on mobile to prevent overflow */}
               <div className="absolute bottom-3 right-3 w-20 sm:w-24 border-2 border-[#fbf9f4] overflow-hidden shadow-lg hidden sm:block">
                 <div className="aspect-[4/3]">
                   <img src={IMG.img7} alt="" loading="lazy"
@@ -287,21 +287,21 @@ export default function Home() {
               traditional portraiture.
             </p>
             <p className="text-[#4e4639] leading-relaxed text-sm sm:text-base mb-7 max-w-lg">
-              Our approach is observational yet intentional — every frame a deliberate piece of art.
+              Our approach is observational yet intentional â€” every frame a deliberate piece of art.
             </p>
             <motion.div whileHover={{ x: 5 }} transition={{ type: 'spring', stiffness: 300 }}>
               <Link to="/about"
                 className="inline-block font-oswald text-xs tracking-widest uppercase pb-1 hover:text-[#775a19] transition-colors"
                 style={{ borderBottom: '1px solid #1b1c19', textDecoration: 'none', color: '#1b1c19' }}>
                 Discover the Studio
-              </a>
+              </Link>
             </motion.div>
           </FadeRight>
         </div>
       </section>
 
       {/* --------------------------------------
-          SERVICES — 4 cards, clean grid
+          SERVICES â€” 4 cards, clean grid
       -------------------------------------- */}
       <section className="py-16 sm:py-24 px-6 sm:px-12 bg-[#f5f3ee]">
         <div className="max-w-7xl mx-auto">
@@ -315,8 +315,8 @@ export default function Home() {
             <Link to="/packages"
               className="font-oswald text-[10px] tracking-widest uppercase opacity-50 hover:opacity-100 transition-opacity self-start sm:self-auto"
               style={{ textDecoration: 'none', color: '#1b1c19' }}>
-              View Packages ?
-            </a>
+              View Packages â†’
+            </Link>
           </FadeUp>
 
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" stagger={0.08}>
@@ -337,7 +337,7 @@ export default function Home() {
                       <p className="text-[#4e4639] text-xs leading-relaxed">{svc.desc}</p>
                     </div>
                   </motion.div>
-                </a>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -359,8 +359,8 @@ export default function Home() {
             <Link to="/gallery"
               className="font-oswald text-[10px] tracking-widest uppercase opacity-50 hover:opacity-100 transition-opacity self-start sm:self-auto"
               style={{ textDecoration: 'none', color: '#1b1c19' }}>
-              View Full Archive ?
-            </a>
+              View Full Archive â†’
+            </Link>
           </FadeUp>
 
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-3" stagger={0.08} delay={0.1}>
@@ -383,7 +383,7 @@ export default function Home() {
                       </div>
                     </motion.div>
                   </motion.div>
-                </a>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -417,7 +417,7 @@ export default function Home() {
             Every frame is a <span className="italic" style={{ color: '#e9c176' }}>deliberate decision</span>.
           </h3>
           <p className="text-sm leading-relaxed max-w-xl mx-auto" style={{ color: '#d1c5b4' }}>
-            Medium-format film alongside digital capture — blending chemical depth with modern precision.
+            Medium-format film alongside digital capture â€” blending chemical depth with modern precision.
             The result is imagery that feels both timeless and alive.
           </p>
         </FadeUp>
@@ -485,7 +485,7 @@ export default function Home() {
                   transition={{ type: 'spring', stiffness: 300 }}>
                   View Gallery
                 </motion.button>
-              </a>
+              </Link>
             </MagneticButton>
           </div>
         </FadeUp>

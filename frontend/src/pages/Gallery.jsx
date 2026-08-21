@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+﻿import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { WA_BOOK_LINK as WA_LINK } from '../App'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -76,7 +76,7 @@ export default function Gallery() {
             Visual Narratives
           </h1>
           <p className="animate-fade-up-delay2 text-sm text-[#fbf9f4] opacity-70 mt-2 max-w-lg">
-            {galleryImages.length} frames � a timeless collection of human connection.
+            {galleryImages.length} frames · a timeless collection of human connection.
           </p>
         </div>
       </section>
@@ -208,19 +208,19 @@ export default function Gallery() {
             </div>
             <h4 className="font-[Noto_Serif] text-xl sm:text-2xl font-light mt-8">Grand Wedding @ Le Meridien, Jaipur</h4>
             <p className="mt-3 max-w-xl mx-auto text-sm" style={{color:'#d1c5b4'}}>
-              Ayush and Diksha � a journey of love and happiness, preserved forever.
+              Ayush and Diksha — a journey of love and happiness, preserved forever.
             </p>
           </FadeUp>
         </section>
 
-        {/* -- DOWNLOADS � auto from /public/files/ -- */}
+        {/* -- DOWNLOADS — auto from /public/files/ -- */}
         {allPDFs.length > 0 && (
           <section className="py-16 sm:py-24 px-6 sm:px-12 max-w-7xl mx-auto">
             <FadeUp className="mb-10">
               <p className="text-[10px] tracking-[0.4em] uppercase text-[#775a19] mb-2">Resources</p>
               <h3 className="font-[Noto_Serif] text-3xl sm:text-4xl font-light">Downloads</h3>
               <p className="text-[#4e4639] text-sm mt-2">
-                Drop any PDF into <code className="bg-[#f5f3ee] px-1 text-xs">public/files/</code> � it appears here automatically.
+                Drop any PDF into <code className="bg-[#f5f3ee] px-1 text-xs">public/files/</code> — it appears here automatically.
               </p>
             </FadeUp>
             {allPDFs.map((pdf,i)=>(
@@ -292,7 +292,7 @@ export default function Gallery() {
                   whileHover={{borderBottomColor:'#775a19'}}>
                   View Services
                 </motion.button>
-              </a>
+              </Link>
             </div>
           </FadeUp>
         </section>

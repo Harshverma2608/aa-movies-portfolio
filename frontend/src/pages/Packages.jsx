@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { WA_BOOK_LINK as WA_LINK } from '../App'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -15,7 +15,7 @@ const packages = {
     {
       name: 'Silver',
       tag: 'Essential',
-      price: '?49,999',
+      price: '₹49,999',
       duration: '1 Day',
       highlight: false,
       features: [
@@ -31,7 +31,7 @@ const packages = {
     {
       name: 'Gold',
       tag: 'Most Popular',
-      price: '?89,999',
+      price: '₹89,999',
       duration: '2 Days',
       highlight: true,
       features: [
@@ -49,7 +49,7 @@ const packages = {
     {
       name: 'Platinum',
       tag: 'Premium',
-      price: '?1,49,999',
+      price: '₹1,49,999',
       duration: '3 Days',
       highlight: false,
       features: [
@@ -71,8 +71,8 @@ const packages = {
     {
       name: 'Classic',
       tag: 'Essential',
-      price: '?19,999',
-      duration: '3�4 Hours',
+      price: '₹19,999',
+      duration: '3–4 Hours',
       highlight: false,
       features: [
         '1 Location',
@@ -86,11 +86,11 @@ const packages = {
     {
       name: 'Signature',
       tag: 'Most Popular',
-      price: '?34,999',
+      price: '₹34,999',
       duration: 'Full Day',
       highlight: true,
       features: [
-        '2�3 Locations',
+        '2–3 Locations',
         '1 Photographer + Assistant',
         '300+ Edited Photos',
         'Short Film (2 min)',
@@ -122,7 +122,7 @@ const packages = {
     {
       name: 'Mini',
       tag: 'Quick Session',
-      price: '?7,999',
+      price: '₹7,999',
       duration: '1 Hour',
       highlight: false,
       features: [
@@ -136,29 +136,29 @@ const packages = {
     {
       name: 'Standard',
       tag: 'Most Popular',
-      price: '?14,999',
-      duration: '2�3 Hours',
+      price: '₹14,999',
+      duration: '2–3 Hours',
       highlight: true,
       features: [
         '2 Locations',
         '120+ Edited Photos',
         'Premium Retouch',
         'Online Gallery (1 Year)',
-        '10 Printed Photos (5�7)',
+        '10 Printed Photos (5–7)',
       ],
       note: 'Ideal for families & professionals',
     },
     {
       name: 'Heritage',
       tag: 'Premium',
-      price: '?24,999',
+      price: '₹24,999',
       duration: 'Full Day',
       highlight: false,
       features: [
         'Multiple Locations',
         '250+ Edited Photos',
         'Fine Art Retouch',
-        'Framed Print (16�20)',
+        'Framed Print (16–20)',
         'Luxury Photobook',
         'Lifetime Online Gallery',
       ],
@@ -169,7 +169,7 @@ const packages = {
     {
       name: 'Basic',
       tag: 'Essential',
-      price: '?12,999',
+      price: '₹12,999',
       duration: '3 Hours',
       highlight: false,
       features: [
@@ -183,7 +183,7 @@ const packages = {
     {
       name: 'Premium',
       tag: 'Most Popular',
-      price: '?24,999',
+      price: '₹24,999',
       duration: '6 Hours',
       highlight: true,
       features: [
@@ -216,14 +216,14 @@ const packages = {
 }
 
 const addOns = [
-  { icon: 'photo_album',    label: 'Extra Album Pages',    price: '?500 / page'   },
-  { icon: 'movie',          label: 'Extended Film Edit',   price: '?8,000'        },
+  { icon: 'photo_album',    label: 'Extra Album Pages',    price: '₹500 / page'   },
+  { icon: 'movie',          label: 'Extended Film Edit',   price: '₹8,000'        },
   { icon: 'flight',         label: 'Outstation Travel',    price: 'At Actuals'    },
-  { icon: 'frame_person',   label: 'Extra Photographer',   price: '?6,000 / day'  },
-  { icon: 'hdr_strong',     label: 'Drone Coverage',       price: '?5,000'        },
-  { icon: 'speed',          label: 'Express Delivery',     price: '?3,000'        },
-  { icon: 'print',          label: 'Canvas Print (24�36)', price: '?4,500'        },
-  { icon: 'slideshow',      label: 'Teaser Reel (60 sec)', price: '?4,000'        },
+  { icon: 'frame_person',   label: 'Extra Photographer',   price: '₹6,000 / day'  },
+  { icon: 'hdr_strong',     label: 'Drone Coverage',       price: '₹5,000'        },
+  { icon: 'speed',          label: 'Express Delivery',     price: '₹3,000'        },
+  { icon: 'print',          label: 'Canvas Print (24–36)', price: '₹4,500'        },
+  { icon: 'slideshow',      label: 'Teaser Reel (60 sec)', price: '₹4,000'        },
 ]
 
 export default function Packages() {
@@ -418,7 +418,7 @@ export default function Packages() {
                   'All prices are starting prices. Final quote depends on location, travel, and specific requirements.',
                   'A 30% advance is required to confirm the booking. Balance due 7 days before the event.',
                   'Travel charges apply for locations outside Agra/Mathura. Outstation stays at actuals.',
-                  'Edited photos are delivered within 3�4 weeks. Albums take 6�8 weeks after photo selection.',
+                  'Edited photos are delivered within 3–4 weeks. Albums take 6–8 weeks after photo selection.',
                   'All packages include full copyright of images for personal use. Commercial use requires separate licensing.',
                   'Cancellation policy: 50% refund if cancelled 30+ days before event. No refund within 30 days.',
                 ].map((note, i) => (

@@ -145,7 +145,7 @@ export default function Navbar() {
               >
                 Book a Session
               </button>
-            </NavLink>
+            </a>
 
             {/* Hamburger */}
             <button className="lg:hidden p-2 flex flex-col gap-1.5" onClick={() => setMenuOpen(v => !v)} aria-label="Toggle menu">
@@ -193,7 +193,7 @@ export default function Navbar() {
           <button className="gold-gradient text-[#261900] px-10 py-4 text-xs tracking-[0.2em] uppercase font-bold rounded-sm mt-4">
             Book a Session
           </button>
-        </NavLink>
+        </a>
       </div>
     </>
   )
