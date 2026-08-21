@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { WA_LINK } from '../App'
+import { WA_BOOK_LINK as WA_LINK } from '../App'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IMG } from '../hooks/useMedia'
 import Navbar from '../components/Navbar'
@@ -436,6 +436,8 @@ export default function Albums() {
     </div>
   )
 }
+
+
 
 
 

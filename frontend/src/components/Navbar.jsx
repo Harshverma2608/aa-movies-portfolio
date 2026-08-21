@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { WA_LINK } from '../App'
+import { WA_BOOK_LINK as WA_LINK } from '../App'
 import { IMG } from '../hooks/useMedia'
 
 const links = [
@@ -198,5 +198,6 @@ export default function Navbar() {
     </>
   )
 }
+
 
 

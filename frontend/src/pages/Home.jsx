@@ -9,7 +9,7 @@ import {
   FloatElement, GoldLineDraw,
 } from '../components/AnimatedSection'
 import { IMG, useImages } from '../hooks/useMedia'
-import { WA_LINK } from '../App'
+import { WA_BOOK_LINK as WA_LINK } from '../App'
 
 const E = [0.16, 1, 0.3, 1]
 
@@ -495,3 +495,5 @@ export default function Home() {
     </div>
   )
 }
+
+

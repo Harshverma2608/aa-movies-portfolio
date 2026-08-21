@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { WA_LINK } from '../App'
+import { WA_BOOK_LINK as WA_LINK } from '../App'
 import { IMG } from '../hooks/useMedia'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -326,5 +326,7 @@ export default function Services() {
     </div>
   )
 }
+
+
 
 

@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { FadeUp, FadeLeft, FadeRight, ClipReveal, ScrollProgressBar } from '../components/AnimatedSection'
 import api from '../lib/api'
+import { WA_NUMBER } from '../App'
 
 const SUBJECTS = [
   'Wedding Enquiry',
@@ -52,6 +53,11 @@ export default function Contact() {
     try {
       await api.post('/api/contact', form)
       setStatus('success')
+
+      // Build WhatsApp message with enquiry details
+      const waText = `📸 New Enquiry — A&A Movies\n\n👤 Name: ${form.name}\n📧 Email: ${form.email}\n📞 Phone: ${form.phone || '—'}\n📌 Subject: ${form.subject}${form.date ? `\n📅 Date: ${form.date}` : ''}\n\n💬 Message:\n${form.message}`
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`, '_blank')
+
       setForm({ name:'', email:'', phone:'', subject:'Wedding Enquiry', message:'', date:'' })
       setErrors({})
       formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })

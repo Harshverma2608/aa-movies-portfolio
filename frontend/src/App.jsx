@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Home      from './pages/Home'
 import Gallery   from './pages/Gallery'
@@ -11,9 +12,24 @@ import Albums    from './pages/Albums'
 const ease = [0.76, 0, 0.24, 1]
 
 // ── WhatsApp config ──────────────────────────────────────────────
-export const WA_NUMBER  = '919837739595'
-export const WA_MESSAGE = encodeURIComponent('Hi A&A Movies! I would like to enquire about your photography services.')
-export const WA_LINK    = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`
+export const WA_NUMBER = '919837739595'
+export const WA_LINK   = `https://wa.me/${WA_NUMBER}`
+
+export function buildWALink(text) {
+  return `${WA_LINK}?text=${encodeURIComponent(text)}`
+}
+
+// Default link for "Book a Session" buttons
+export const WA_BOOK_LINK = buildWALink('Hi A&A Movies! I would like to enquire about your photography services.')
+
+// ── Scroll to top on every route change ─────────────────────────
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname])
+  return null
+}
 
 function PageWrapper({ children }) {
   return (
@@ -39,7 +55,7 @@ function PageWrapper({ children }) {
 function WhatsAppButton() {
   return (
     <motion.a
-      href={WA_LINK}
+      href={WA_BOOK_LINK}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
@@ -68,6 +84,7 @@ export default function App() {
   const location = useLocation()
   return (
     <>
+      <ScrollToTop />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/"          element={<PageWrapper><Home/></PageWrapper>}      />
