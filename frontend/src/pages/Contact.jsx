@@ -50,21 +50,26 @@ export default function Contact() {
 
     setLoading(true)
     setStatus(null)
+
+    // Build WhatsApp message
+    const waText = `📸 New Enquiry — A&A Movies\n\n👤 Name: ${form.name}\n📧 Email: ${form.email}\n📞 Phone: ${form.phone || '—'}\n📌 Subject: ${form.subject}${form.date ? `\n📅 Date: ${form.date}` : ''}\n\n💬 Message:\n${form.message}`
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`
+
+    // Open WhatsApp BEFORE await — browsers block window.open after async
+    const waWindow = window.open(waUrl, '_blank')
+
     try {
       await api.post('/api/contact', form)
       setStatus('success')
-
-      // Build WhatsApp message with enquiry details
-      const waText = `📸 New Enquiry — A&A Movies\n\n👤 Name: ${form.name}\n📧 Email: ${form.email}\n📞 Phone: ${form.phone || '—'}\n📌 Subject: ${form.subject}${form.date ? `\n📅 Date: ${form.date}` : ''}\n\n💬 Message:\n${form.message}`
-      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`, '_blank')
-
-      setForm({ name:'', email:'', phone:'', subject:'Wedding Enquiry', message:'', date:'' })
-      setErrors({})
-      formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     } catch (err) {
-      setStatus(err.response?.data?.error || 'error')
+      // Even if API fails, WhatsApp already opened — show success for WA
+      setStatus('success')
+      console.warn('API error (email may not send):', err.message)
     } finally {
       setLoading(false)
+      setForm({ name:'', email:'', phone:'', subject:'Wedding Enquiry', message:'', date:'' })
+      setErrors({})
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
 
