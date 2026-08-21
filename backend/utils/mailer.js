@@ -106,7 +106,7 @@ export async function sendAutoReply({ name, email, subject }) {
       <p>In the meantime, feel free to explore our work on our website or reach out directly:</p>
       <div class="divider"></div>
       <div class="contact-row">📞 <a href="tel:+919837739595" style="color:#775a19;text-decoration:none">+91 98377 39595</a></div>
-      <div class="contact-row">✉️ <a href="mailto:aa.movies@gmail.com" style="color:#775a19;text-decoration:none">aa.movies@gmail.com</a></div>
+      <div class="contact-row">✉️ <a href="mailto:weddingbyaamovies@gmail.com" style="color:#775a19;text-decoration:none">weddingbyaamovies@gmail.com</a></div>
       <div class="contact-row">📍 Mathura, Uttar Pradesh, India</div>
       <div class="divider"></div>
       <p style="font-size:13px;color:#7f7667">Warm regards,<br/><strong style="color:#1b1c19">A&amp;A Movies Team</strong><br/>Event Photography Studio</p>

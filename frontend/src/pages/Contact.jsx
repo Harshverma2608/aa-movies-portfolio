@@ -302,12 +302,12 @@ export default function Contact() {
                           style={{fontVariationSettings:"'FILL' 1"}}>call</span>
                         +91 98377 39595
                       </a>
-                      <a href="mailto:aa.movies@gmail.com"
+                      <a href="mailto:weddingbyaamovies@gmail.com"
                         className="flex items-center gap-3 text-sm text-[#4e4639] hover:text-[#775a19] transition-colors"
                         style={{textDecoration:'none'}}>
                         <span className="material-symbols-outlined text-[#775a19] text-base"
                           style={{fontVariationSettings:"'FILL' 1"}}>mail</span>
-                        aa.movies@gmail.com
+                        weddingbyaamovies@gmail.com
                       </a>
                     </div>
                   </div>

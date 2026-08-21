@@ -89,11 +89,11 @@ export default function Footer() {
                 <span className="material-symbols-outlined text-base" style={{ color: '#e9c176', fontVariationSettings: "'FILL' 1" }}>call</span>
                 +91 98377 39595
               </a>
-              <a href="mailto:aa.movies@gmail.com"
+              <a href="mailto:weddingbyaamovies@gmail.com"
                 className="flex items-center gap-3 text-sm text-[#fbf9f4] opacity-60 hover:opacity-100 hover:text-[#e9c176] transition-all"
                 style={{ textDecoration: 'none' }}>
                 <span className="material-symbols-outlined text-base" style={{ color: '#e9c176', fontVariationSettings: "'FILL' 1" }}>mail</span>
-                aa.movies@gmail.com
+                weddingbyaamovies@gmail.com
               </a>
               <p className="flex items-start gap-3 text-sm text-[#fbf9f4] opacity-40">
                 <span className="material-symbols-outlined text-base mt-0.5" style={{ color: '#e9c176', fontVariationSettings: "'FILL' 1" }}>location_on</span>
